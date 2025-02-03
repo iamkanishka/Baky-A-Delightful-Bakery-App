@@ -1,7 +1,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="fill">
+    <!-- Transparent Background -->
+    <item android:drawable="@android:color/transparent" />
+
+    <!-- Background Image -->
     <item>
         <bitmap android:gravity="fill" android:src="@drawable/background" />
     </item>
+
+    <!-- Centered Logo -->
     <item>
         <bitmap android:gravity="center" android:src="@drawable/logo" />
     </item>
