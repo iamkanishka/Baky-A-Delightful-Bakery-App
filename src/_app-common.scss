@@ -27,6 +27,7 @@
     @include colorize($contrasted-color: complementary background 20% 0%);
   }
 }
+ 
 
 // Common page class
 .page__content {
@@ -36,6 +37,8 @@
     font-size: 20;
     vertical-align: center;
     horizontal-align: center;
+   background-color: white;
+
   }
 
   &-icon {
@@ -43,4 +46,7 @@
     vertical-align: top;
     margin-top: 20%;
   }
+  
 }
+
+
