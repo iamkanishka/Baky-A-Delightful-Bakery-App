@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-
-import { DataService, DataItem } from '../shared/data.service'
+ 
 import { Page } from '@nativescript/core'
  
 @Component({
@@ -8,7 +7,7 @@ import { Page } from '@nativescript/core'
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-  items: Array<DataItem>
+   
 
   // constructor(private _itemService: DataService) {}
   constructor(private _page: Page) {
