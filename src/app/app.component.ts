@@ -17,6 +17,13 @@ export class AppComponent  {
     
   }
 
+  selectedIndex = 0;
+
+  onTabChange(event: any) {
+    this.selectedIndex = event.value;
+  }
+
+
   ngAfterViewInit() {
     if (this.tabView) {
       const nativeTabView = this.tabView.nativeElement;
