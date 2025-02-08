@@ -12,7 +12,6 @@
     "@angular/platform-browser": "~18.0.0",
     "@angular/platform-browser-dynamic": "~18.0.0",
     "@angular/router": "~18.0.0",
-    "@nativescript-community/ui-svg": "^0.2.11",
     "@nativescript/angular": "^18.0.0",
     "@nativescript/core": "~8.8.0",
     "@nativescript/theme": "^3.1.0",
