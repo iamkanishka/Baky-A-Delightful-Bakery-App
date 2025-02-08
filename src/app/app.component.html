@@ -1,6 +1,7 @@
 <TabView
   androidTabsPosition="bottom"
-     tabBackgroundColor="white"
+  tabBackgroundColor="white"
+  (selectedIndexChange)="onTabChange($event)"
 >
   <GridLayout
     *tabItem="{
