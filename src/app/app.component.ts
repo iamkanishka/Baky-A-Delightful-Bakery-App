@@ -4,17 +4,14 @@ import { Color, TabView } from "@nativescript/core";
 @Component({
   selector: "ns-app",
   templateUrl: "app.component.html",
-  styleUrls: ["./app.component.css"],
 })
-export class AppComponent  {
+export class AppComponent {
   @ViewChild("tabViewRef", { static: false }) tabView!: ElementRef<TabView>;
-
 
   constructor() {}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    
   }
 
   selectedIndex = 0;
@@ -22,7 +19,6 @@ export class AppComponent  {
   onTabChange(event: any) {
     this.selectedIndex = event.value;
   }
-
 
   ngAfterViewInit() {
     if (this.tabView) {
@@ -34,5 +30,4 @@ export class AppComponent  {
       nativeTabView.backgroundColor = new Color("white"); // Tab Background Color
     }
   }
-
 }
