@@ -6,13 +6,8 @@ import { Page } from "@nativescript/core";
   selector: "Home",
   templateUrl: "./home.component.html",
 })
-export class HomeComponent{
-  // constructor(private _itemService: DataService) {}
+export class HomeComponent {
   constructor(private _page: Page) {
     this._page.actionBarHidden = true;
-  }
-
-  ngOnInit(): void {
-    // this.items = this._itemService.getItems()
   }
 }
