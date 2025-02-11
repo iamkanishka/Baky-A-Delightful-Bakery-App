@@ -7,27 +7,40 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: '/(homeTab:home/default//browseTab:browse/default//searchTab:search/default)',
+    redirectTo: '/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)',
     pathMatch: 'full',
   },
 
   {
     path: 'home',
     component: NSEmptyOutletComponent,
-    loadChildren: () => import('./../home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
     outlet: 'homeTab',
   },
   {
-    path: 'browse',
+    path: 'explore',
     component: NSEmptyOutletComponent,
-    loadChildren: () => import('./../browse/browse.module').then((m) => m.BrowseModule),
-    outlet: 'browseTab',
+    loadChildren: () => import('./explore/explore.module').then((m) => m.ExploreModule),
+    outlet: 'exploreTab',
   },
   {
-    path: 'search',
+    path: 'wishlist',
     component: NSEmptyOutletComponent,
-    loadChildren: () => import('./../search/search.module').then((m) => m.SearchModule),
-    outlet: 'searchTab',
+    loadChildren: () => import('./../wishlist/wishlist.module').then((m) => m.WishlistModule),
+    outlet: 'wishlistTab',
+  },
+
+  {
+    path: 'chat',
+    component: NSEmptyOutletComponent,
+    loadChildren: () => import('./chat/chat.module').then((m) => m.ChatModule),
+    outlet: 'chatTab',
+  },
+  {
+    path: 'profile',
+    component: NSEmptyOutletComponent,
+    loadChildren: () => import('./profile/profile.module').then((m) => m.ProfileModule),
+    outlet: 'profileTab',
   },
 
 ];
