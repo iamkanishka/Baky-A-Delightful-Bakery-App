@@ -31,6 +31,9 @@
 			android:exported="true">
 
 			<meta-data android:name="SET_THEME_ON_LAUNCH" android:resource="@style/AppTheme" />
+			 <meta-data  android:name="com.google.android.gms.auth.api.signin.CLIENT_ID"
+                 android:value="904848439992-q3gijafg8o7s4d3o6gthotlm89hlmrd0.apps.googleusercontent.com" />
+
 
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
