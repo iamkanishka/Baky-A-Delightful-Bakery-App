@@ -1,6 +1,7 @@
 // You can add your native dependencies here
 dependencies {
 //  implementation 'androidx.multidex:multidex:2.0.1'
+
 }
 
 android {
@@ -23,3 +24,6 @@ android {
     additionalParameters "--no-version-vectors"
   }
 }
+
+apply plugin: 'com.google.gms.google-services'
+ 
