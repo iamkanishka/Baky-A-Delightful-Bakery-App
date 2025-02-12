@@ -1,1 +1,83 @@
-<p>sign-in works!</p>
+<GridLayout backgroundColor="white">
+  <Label title="Create Account" class="action-bar"></Label>
+
+  <StackLayout class="container">
+    <Label text="Create Account" class="title"></Label>
+    <Label
+      text="Fill your information below or register with your social account."
+      class="subtitle"
+    ></Label>
+
+    <StackLayout class="input-container">
+      <TextField
+        [(ngModel)]="name"
+        hint="Ex. John Doe"
+        class="input-field"
+        textAlignment="left" 
+      ></TextField>
+    </StackLayout>
+
+    <StackLayout class="input-container">
+      <TextField
+        [(ngModel)]="email"
+        hint="example@gmail.com"
+        keyboardType="email"
+        class="input-field"
+        textAlignment="left" 
+      ></TextField>
+    </StackLayout>
+
+    <StackLayout class="password-container">
+      <TextField
+        [(ngModel)]="password"
+        hint="Password"
+        secure="true"
+        class="input-field"
+        textAlignment="left" 
+      ></TextField>
+      <Image
+        src="~/assets/eye-icon.png"
+        class="eye-icon"
+        (tap)="togglePasswordVisibility()"
+      ></Image>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal" class="checkbox-container">
+      <CheckBox [(ngModel)]="agreeTerms"></CheckBox>
+      <Label text="Agree with " class="terms-text"></Label>
+      <Label
+        text="Terms & Conditions"
+        class="terms-link"
+        (tap)="onTerms()"
+      ></Label>
+    </StackLayout>
+
+    <Button text="Sign In" class="btn-primary" (tap)="onSignUp()"></Button>
+
+    <Label text="Or sign up with" class="or-divider"></Label>
+
+    <StackLayout orientation="horizontal" class="social-login">
+      <Image
+        src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+        class="social-icon"
+        (tap)="onAppleSignUp()"
+      ></Image>
+      <Image
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
+        class="social-icon"
+        (tap)="onGoogleSignUp()"
+      ></Image>
+      <Image
+        src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yD/r/5D8s-GsHJlJ.png"
+        class="social-icon"
+        (tap)="onFacebookSignUp()"
+      ></Image>
+    </StackLayout>
+
+    <Label
+      text="Already have an account? Sign In"
+      class="signup-link"
+      (tap)="onSignIn()"
+    ></Label>
+  </StackLayout>
+</GridLayout>
