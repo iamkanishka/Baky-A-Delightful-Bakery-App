@@ -3,6 +3,10 @@
   "main": "src/main.ts",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "cnr": "ns clean && ns run android"
+     
+  },
   "dependencies": {
     "@angular/animations": "~18.0.0",
     "@angular/common": "~18.0.0",
