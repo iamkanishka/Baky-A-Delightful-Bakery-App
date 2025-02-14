@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes } from "@angular/router";
 
-const routes: Routes = [];
+import { NativeScriptRouterModule } from "@nativescript/angular";
+import { ChatComponent } from "./chat.component";
+
+const routes: Routes = [
+  { path: "", redirectTo: "default", pathMatch: "full" },
+  { path: "default", component: ChatComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [NativeScriptRouterModule.forChild(routes)],
+  exports: [NativeScriptRouterModule],
 })
-export class ChatRoutingModule { }
+export class ChatRoutingModule {}
