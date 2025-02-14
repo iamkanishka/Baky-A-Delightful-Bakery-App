@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
+import { NativeScriptRouterModule } from '@nativescript/angular';
+import { WishlistComponent } from "./wishlist.component";
 
-const routes: Routes = [];
+
+const routes: Routes = [
+  { path: '', redirectTo: "default", pathMatch: "full" },
+  { path: "default", component: WishlistComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [NativeScriptRouterModule.forChild(routes)],
+  exports: [NativeScriptRouterModule]
 })
 export class WishlistRoutingModule { }
