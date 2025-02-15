@@ -8,6 +8,8 @@ import { Page } from "@nativescript/core";
 })
 export class HomeComponent {
   constructor(private _page: Page) {
+    console.log("HomeComponent");
+    
     this._page.actionBarHidden = true;
   }
 }
