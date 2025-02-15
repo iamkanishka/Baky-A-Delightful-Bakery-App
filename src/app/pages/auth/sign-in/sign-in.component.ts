@@ -7,6 +7,7 @@ import { LoginManager, AccessToken } from "@nativescript/facebook";
 import { isAndroid } from "@nativescript/core";
 import { Application } from "@nativescript/core";
 import { AuthService } from "./../service/auth/auth.service";
+import { RouterExtensions } from "@nativescript/angular";
 
 declare var com: any;
 
@@ -24,8 +25,8 @@ export class SignInComponent implements OnInit {
   passwordHidden: boolean = true;
   constructor(
     private _page: Page,
-    private router: Router,
-    private authService: AuthService
+    private router: RouterExtensions,
+    private authService: AuthService 
   ) {
     this._page.actionBarHidden = true;
   }
@@ -40,7 +41,9 @@ export class SignInComponent implements OnInit {
   }
 
   onSignIn() {
-    this.router.navigate(["/login"]);
+    console.log("routing",);
+
+    this.router.navigate(["/tabs/home/default"]);
   }
 
   onAppleSignUp() {
