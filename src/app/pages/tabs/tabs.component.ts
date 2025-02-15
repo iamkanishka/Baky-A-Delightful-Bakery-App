@@ -1,14 +1,20 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Color, TabView } from "@nativescript/core";
 
 @Component({
-  selector: "ns-app",
-  templateUrl: "app.component.html",
+  selector: "app-tabs",
+  templateUrl: "./tabs.component.html",
 })
 export class TabsComponent {
   @ViewChild("tabViewRef", { static: false }) tabView!: ElementRef<TabView>;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {
+  console.log('Tabs Component constructor');
+
+  console.log(this.route);
+  
+  }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
