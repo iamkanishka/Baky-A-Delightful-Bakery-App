@@ -4,6 +4,7 @@ import { NativeScriptCommonModule } from '@nativescript/angular'
 import { HomeRoutingModule } from './home-routing.module'
 import { HomeComponent } from './home.component'
 import { CommonModule } from '@angular/common'
+import { ActivatedRoute } from '@angular/router'
 
 
 @NgModule({
@@ -11,4 +12,9 @@ import { CommonModule } from '@angular/common'
   declarations: [HomeComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
-export class HomeModule {}
+export class HomeModule {
+  constructor(private route: ActivatedRoute) {
+     
+    console.log("HomeModule");
+  }
+}
