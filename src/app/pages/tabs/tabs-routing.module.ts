@@ -7,11 +7,11 @@ import {
 
 import { TabsComponent } from "./tabs.component"; // Wrapper component for the tabs
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: "",
     redirectTo:
-      "/tabs/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
+      "/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
     pathMatch: "full",
   },
 
