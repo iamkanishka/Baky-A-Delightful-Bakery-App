@@ -1,1 +1,25 @@
-<p>product-card works!</p>
+<GridLayout class="card">
+    <!-- Product Image -->
+    <Image [src]="product.image" stretch="aspectFill" class="product-image"></Image>
+
+    <!-- Rating Badge -->
+    <GridLayout class="rating-badge" left="10" top="10">
+        <Label class="star" text="★"></Label>
+        <Label class="rating" [text]="product.rating"></Label>
+    </GridLayout>
+
+    <!-- Favorite Icon -->
+    <Image src="~/assets/heart.png" class="favorite-icon" right="10" top="10"></Image>
+
+    <!-- Product Name -->
+    <Label class="product-title" [text]="product.name" left="10" bottom="50"></Label>
+
+    <!-- Price -->
+    <StackLayout orientation="horizontal" left="10" bottom="20">
+        <Label class="price" [text]="'$' + product.price"></Label>
+        <Label class="old-price" [text]="'$' + product.oldPrice"></Label>
+    </StackLayout>
+
+    <!-- Cart Icon -->
+    <Image src="~/assets/cart.png" class="cart-icon" right="10" bottom="20"></Image>
+</GridLayout>
