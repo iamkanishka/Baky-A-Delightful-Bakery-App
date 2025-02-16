@@ -4,7 +4,7 @@
   (selectedIndexChange)="onTabChange($event)"
   #tabViewRef
 >
-  <GridLayout
+  <GridLayout 
     *tabItem="{
       title: 'Home',
       iconSource: selectedIndex === 0 ? 'res://home_brown' : 'res://home_gray'
@@ -32,7 +32,7 @@
   >
     <page-router-outlet name="wishlistTab"></page-router-outlet>
   </GridLayout>
-</TabView>
+
 
 <GridLayout
   *tabItem="{
@@ -51,3 +51,4 @@
 >
   <page-router-outlet name="profileTab"></page-router-outlet>
 </GridLayout>
+</TabView>
