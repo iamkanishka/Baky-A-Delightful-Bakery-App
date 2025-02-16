@@ -1,7 +1,206 @@
-<GridLayout backgroundColor="white" columns="115, 115" rows="115, 115">
-    <Label text="0,0" row="0" col="0" backgroundColor="#43B3F4" ></Label>
-    <Label text="0,1" row="0" col="1" backgroundColor="#075B88" ></Label>
-    <Label text="1,0" row="1" col="0" backgroundColor="#1089CA" ></Label>
-    <Label text="kansihka" row="1" col="1" backgroundColor="#43B3F4" ></Label>
-    
-  </GridLayout>
+<ScrollView>
+  <!-- Use FlexboxLayout  <FlexboxLayout flexDirection="column" backgroundColor="white"> -->
+  <StackLayout backgroundColor="white">
+    <!-- Header -->
+    <FlexboxLayout
+      height="175"
+      backgroundColor="#8B4513"
+      flexDirection="column"
+      padding="20"
+      style="border-bottom-left-radius: 30; border-bottom-right-radius: 30"
+    >
+      <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
+      </FlexboxLayout>
+      <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
+      </FlexboxLayout>
+    </FlexboxLayout>
+    <!-- /Header -->
+
+    <!-- Special Offers  -->
+    <!-- Special Offers Text  -->
+
+    <FlexboxLayout
+      height="auto"
+      paddingTop="20"
+      paddingRight="20"
+      paddingLeft="20"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <!-- Left: "Special Offers" Title -->
+      <Label
+        text="Special Offers"
+        fontSize="20"
+        color="#000000"
+        fontWeight="bold"
+      ></Label>
+
+      <!-- Right: "See All" Link -->
+      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+      </Label>
+    </FlexboxLayout>
+
+    <!-- /Special Offers Text  -->
+
+    <!-- Special Offers Banners  -->
+
+    <GridLayout rows="auto, auto" class="carousel-container">
+      <!-- Ensures only one slide is fully visible -->
+      <ScrollView
+        #carouselScrollView
+        orientation="horizontal"
+        scrollBarIndicatorVisible="false"
+        (scroll)="onScroll($event)"
+        height="30%"
+        row="0"
+      >
+        <StackLayout orientation="horizontal" class="carousel-wrapper">
+          <StackLayout
+            *ngFor="let item of items; let i = index"
+            width="{{ screenWidth }}"
+            height="100%"
+            class="carousel-item"
+            horizontalAlignment="center"
+            verticalAlignment="center"
+            borderRadius="15"
+          >
+            <!--
+            <Label [text]="item.text" class="carousel-label"></Label>-->
+            <GridLayout rows="*" columns="*" class="card">
+              <Image
+                [src]="item.imgURL"
+                stretch="aspectFill"
+                class="card-image"
+              ></Image>
+              <StackLayout row="1" class="card-content">
+                <Label text="Awesome Card" class="card-title"></Label>
+                <Label
+                  text="This is a simple card created in NativeScript with Angular. The height of the card will adjust automatically based on the content inside."
+                  class="card-description"
+                ></Label>
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+
+      <!-- Navigation Dots Positioned Below -->
+      <StackLayout
+        row="1"
+        orientation="horizontal"
+        horizontalAlignment="center"
+        class="dots-container"
+      >
+        <Label
+          *ngFor="let dot of items; let i = index"
+          [text]="currentIndex === i ? '●' : '○'"
+          class="dot"
+        ></Label>
+      </StackLayout>
+    </GridLayout>
+    <!-- /Special Offers Banners  -->
+    <!-- /Special Offers -->
+
+    <!-- Categories   -->
+    <!-- /Categories Text  -->
+
+    <FlexboxLayout
+      height="auto"
+      paddingTop="10"
+      paddingRight="20"
+      paddingLeft="20"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <!-- Left: "Categories" Title -->
+      <Label
+        text="Categories"
+        fontSize="20"
+        color="#000000"
+        fontWeight="bold"
+      ></Label>
+
+      <!-- Right: "See All" Link -->
+      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+      </Label>
+    </FlexboxLayout>
+
+    <!-- /Categories text  -->
+
+    <FlexboxLayout
+      flexDirection="row"
+      justifyContent="space-around"
+      padding="16"
+    >
+      <FlexboxLayout flexDirection="column" alignItems="center">
+        <Image
+          src="https://img.icons8.com/?size=100&id=4mdJMAafisX4&format=png&color=000000"
+          class="category-icon"
+        />
+        <Label text="Cup Cake" class="category-label"></Label>
+      </FlexboxLayout>
+
+      <FlexboxLayout flexDirection="column" alignItems="center">
+        <Image
+          src="https://img.icons8.com/?size=100&id=Eq5aUzFk6RKG&format=png&color=000000"
+          class="category-icon"
+        />
+        <Label text="Cookies" class="category-label"></Label>
+      </FlexboxLayout>
+
+      <FlexboxLayout flexDirection="column" alignItems="center">
+        <Image
+          src="https://img.icons8.com/?size=100&id=SS1cK4TzAfmm&format=png&color=000000"
+          class="category-icon"
+        />
+        <Label text="Donuts" class="category-label"></Label>
+      </FlexboxLayout>
+
+      <FlexboxLayout flexDirection="column" alignItems="center">
+        <Image
+          src="https://img.icons8.com/?size=100&id=4eZuUUJmJdVX&format=png&color=000000"
+          class="category-icon"
+        />
+        <Label text="Breads" class="category-label"></Label>
+      </FlexboxLayout>
+    </FlexboxLayout>
+
+    <!-- /Categories  -->
+
+
+       <!-- Featured Products   -->
+    <!-- /Featured Products Text  -->
+
+    <FlexboxLayout
+      height="auto"
+      paddingTop="10"
+      paddingRight="20"
+      paddingLeft="20"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <!-- Left: "Featured Products" Title -->
+      <Label
+        text="Featured Products"
+        fontSize="20"
+        color="#000000"
+        fontWeight="bold"
+      ></Label>
+
+      <!-- Right: "See All" Link -->
+      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+      </Label>
+    </FlexboxLayout>
+
+    <!-- /Featured Products text  -->
+ 
+
+    <!-- /Featured Products  -->
+
+
+
+  </StackLayout>
+</ScrollView>
