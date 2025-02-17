@@ -1,0 +1,35 @@
+
+
+.location-label {
+    color: white;
+    font-size: 16;
+    font-weight: bold;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 5;
+    right: 5;
+    border-radius: 50%;
+    background-color: red;
+    width: 10;
+    height: 10;
+}
+
+.search-bar {
+    margin-top: 15;
+    background-color: white;
+    border-radius: 5;
+    padding: 5;
+    width: 100%;
+    height: 40;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-field {
+    flex-grow: 1;
+    margin-left: 10;
+    font-size: 14;
+    padding: 20px;
+}
