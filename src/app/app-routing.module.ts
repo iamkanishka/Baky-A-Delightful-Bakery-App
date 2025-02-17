@@ -1,32 +1,33 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
+import { TabsComponent } from "./pages/tabs/tabs.component";
+ 
+const routes: Routes = [
+  // {
+  //   path: "auth",
+  //   loadChildren: () =>
+  //     import("./pages/auth/auth.module").then((m) => m.AuthModule),
+  // },
+  // {
+  //   path: "",
+  //   redirectTo: "auth",
+  //   pathMatch: "full",
+  // },
 
-import {routes} from "./pages/tabs/tabs-routing.module";
+  {
+    path: "",
+    redirectTo: "tabs",
+    pathMatch: "full",
+  },
 
-// const routes: Routes = [
-//   {
-//     path: "auth",
-//     loadChildren: () => import("./pages/auth/auth.module").then((m) => m.AuthModule),
-//   },
-//   {
-//     path: "",
-//     redirectTo: "auth",
-//     pathMatch: "full",
-//   },
-
-//   {
-//     path: "",
-//     redirectTo: "tabs",
-//     pathMatch: "full",
-//   },
-
-//   {
-//     path: "tabs",
-//     loadChildren: () =>
-//       import("./pages/tabs/tabs.module").then((m) => m.TabsModule),
-//   },
-// ];
+  {
+    path: "tabs",
+    component: TabsComponent,
+    loadChildren: () =>
+      import("./pages/tabs/tabs.module").then((m) => m.TabsModule),
+  },
+];
 
 @NgModule({
   imports: [NativeScriptRouterModule.forRoot(routes)],
