@@ -8,8 +8,6 @@ import { TabsComponent } from "./tabs.component";
 
 @NgModule({
   bootstrap: [TabsComponent],
-
-  declarations: [TabsComponent],
   imports: [NativeScriptCommonModule, TabsRoutingModule],
   schemas: [NO_ERRORS_SCHEMA],
 })
