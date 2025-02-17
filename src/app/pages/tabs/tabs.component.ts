@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Color, TabView } from "@nativescript/core";
+import { Color, Page, TabView } from "@nativescript/core";
 
 @Component({
   selector: "app-tabs",
@@ -9,12 +9,9 @@ import { Color, TabView } from "@nativescript/core";
 export class TabsComponent {
   @ViewChild("tabViewRef", { static: false }) tabView!: ElementRef<TabView>;
 
-  constructor(private route: ActivatedRoute) {
-  console.log('Tabs Component constructor');
-
-  console.log(this.route);
-  
-  }
+  constructor(private route: ActivatedRoute, private _page: Page) {
+    this._page.actionBarHidden = true;
+   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
