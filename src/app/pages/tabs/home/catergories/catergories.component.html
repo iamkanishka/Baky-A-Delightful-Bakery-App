@@ -1,0 +1,24 @@
+<ActionBar backgroundColor="white" color="black" flat="true">
+  <!-- Back Button -->
+
+  <NavigationButton
+    text="Go back"
+    (tap)="goBack()"
+    android.systemIcon="ic_menu_back"
+  />
+  >
+
+  <!-- Centered Title -->
+  <FlexboxLayout justifyContent="center" alignItems="center">
+    <Label
+      text="Categories"
+      color="black"
+      fontSize="18"
+      fontWeight="bold"
+    ></Label>
+  </FlexboxLayout>
+</ActionBar>
+
+<StackLayout backgroundColor="white">
+  <app-categories-list></app-categories-list>
+</StackLayout>
