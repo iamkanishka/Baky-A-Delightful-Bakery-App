@@ -1,0 +1,14 @@
+<FlexboxLayout
+  flexDirection="row"
+  flexWrap="wrap"
+  justifyContent="space-around"
+  padding="16"
+>
+  @for( category of categories; track category.labelText ){
+  <FlexboxLayout flexDirection="column"  alignItems="center" width="80">
+    <Image [src]="category.categroyImageURL" class="category-icon" />
+    <Label [text]="category.labelText" class="category-label"></Label>
+  </FlexboxLayout>
+
+  }
+</FlexboxLayout>
