@@ -9,10 +9,14 @@
       padding="20"
       style="border-bottom-left-radius: 30; border-bottom-right-radius: 30"
     >
+    <!--
       <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
       </FlexboxLayout>
       <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
       </FlexboxLayout>
+      -->
+
+      <app-home-header></app-home-header>
     </FlexboxLayout>
     <!-- /Header -->
 
@@ -72,14 +76,18 @@
                 [src]="item.imgURL"
                 stretch="aspectFill"
                 class="card-image"
+                loadMode="async"
               ></Image>
+                    <!--
               <StackLayout row="1" class="card-content">
                 <Label text="Awesome Card" class="card-title"></Label>
+             
                 <Label
                   text="This is a simple card created in NativeScript with Angular. The height of the card will adjust automatically based on the content inside."
                   class="card-description"
                 ></Label>
               </StackLayout>
+              -->
             </GridLayout>
           </StackLayout>
         </StackLayout>
@@ -123,49 +131,14 @@
       ></Label>
 
       <!-- Right: "See All" Link -->
-      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal" (tap)="naviagteToCategories()">
       </Label>
     </FlexboxLayout>
 
     <!-- /Categories text  -->
 
-    <FlexboxLayout
-      flexDirection="row"
-      justifyContent="space-around"
-      padding="16"
-    >
-      <FlexboxLayout flexDirection="column" alignItems="center">
-        <Image
-          src="https://img.icons8.com/?size=100&id=4mdJMAafisX4&format=png&color=000000"
-          class="category-icon"
-        />
-        <Label text="Cup Cake" class="category-label"></Label>
-      </FlexboxLayout>
-
-      <FlexboxLayout flexDirection="column" alignItems="center">
-        <Image
-          src="https://img.icons8.com/?size=100&id=Eq5aUzFk6RKG&format=png&color=000000"
-          class="category-icon"
-        />
-        <Label text="Cookies" class="category-label"></Label>
-      </FlexboxLayout>
-
-      <FlexboxLayout flexDirection="column" alignItems="center">
-        <Image
-          src="https://img.icons8.com/?size=100&id=SS1cK4TzAfmm&format=png&color=000000"
-          class="category-icon"
-        />
-        <Label text="Donuts" class="category-label"></Label>
-      </FlexboxLayout>
-
-      <FlexboxLayout flexDirection="column" alignItems="center">
-        <Image
-          src="https://img.icons8.com/?size=100&id=4eZuUUJmJdVX&format=png&color=000000"
-          class="category-icon"
-        />
-        <Label text="Breads" class="category-label"></Label>
-      </FlexboxLayout>
-    </FlexboxLayout>
+    <app-categories-list categoriesQT="4"></app-categories-list>
+ 
 
     <!-- /Categories  -->
 
