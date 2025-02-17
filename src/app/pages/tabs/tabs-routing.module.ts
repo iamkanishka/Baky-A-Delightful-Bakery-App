@@ -4,14 +4,12 @@ import {
   NativeScriptRouterModule,
   NSEmptyOutletComponent,
 } from "@nativescript/angular";
-
-import { TabsComponent } from "./tabs.component"; // Wrapper component for the tabs
-
+ 
 export const routes: Routes = [
   {
     path: "",
     redirectTo:
-      "/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
+      "/tabs/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
     pathMatch: "full",
   },
 
