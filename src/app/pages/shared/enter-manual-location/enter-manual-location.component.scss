@@ -1,0 +1,11 @@
+.page { background-color: #f8f8f8; }
+.container { padding: 20; }
+.search-bar { margin-top: 10; padding: 10; border-radius: 10; background-color: white; }
+.clear-icon { width: 20; height: 20; margin-left: 10; }
+.current-location { flex-direction: row; align-items: center; margin-top: 15; padding: 10; border-radius: 10; background-color: #fff; }
+.location-icon { width: 20; height: 20; margin-right: 10; }
+.search-result-title { margin-top: 15; font-size: 14; color: gray; }
+.search-results { margin-top: 10; }
+.result-item { flex-direction: row; align-items: center; padding: 10; border-bottom-width: 1; border-bottom-color: #ddd; }
+.location-name { font-size: 16; font-weight: bold; }
+.location-address { font-size: 14; color: gray; }
