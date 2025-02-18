@@ -1,7 +1,7 @@
  
 import { Component } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
-import { LocationService } from '../services/location.service';
+import { LocationService } from '../service/location/location.service';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class EnterManualLocationComponent {
       this.searchResults = [];
       return;
     }
-    this.searchResults = this.locationService.searchLocations(this.searchQuery);
+    // this.searchResults = this.locationService.searchLocations(this.searchQuery);
   }
 
   clearSearch() {
