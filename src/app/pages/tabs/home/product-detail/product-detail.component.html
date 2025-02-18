@@ -1,1 +1,51 @@
-<p>product-detail works!</p>
+<ActionBar>
+    <NavigationButton text="&#x2190;" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <StackLayout orientation="horizontal" class="action-icons">
+      <Image src="~/images/heart.png" class="icon"></Image>
+      <Image src="~/images/share.png" class="icon"></Image>
+    </StackLayout>
+  </ActionBar>
+
+  <ScrollView>
+    <StackLayout class="container">
+      <!-- Product Image and Thumbnails -->
+      <Image src="~/images/cake.jpg" class="product-image"></Image>
+      <ScrollView orientation="horizontal" class="thumbnail-container">
+        <StackLayout orientation="horizontal">
+          <Image *ngFor="let img of thumbnails" [src]="img" class="thumbnail"></Image>
+        </StackLayout>
+      </ScrollView>
+      
+      <!-- Product Details -->
+      <Label text="Chocolate Cake" class="product-title"></Label>
+      <StackLayout orientation="horizontal" class="rating-section">
+        <Label text="4.9" class="rating"></Label>
+        <Image src="~/images/star.png" class="star-icon"></Image>
+      </StackLayout>
+      
+      <!-- Seller Info -->
+      <GridLayout columns="auto, *" class="seller-info">
+        <Image src="~/images/seller.jpg" class="seller-image" col="0"></Image>
+        <StackLayout col="1">
+          <Label text="Jenny Wilson" class="seller-name"></Label>
+          <Label text="Cook" class="seller-role"></Label>
+        </StackLayout>
+        <Image src="~/images/chat.png" class="contact-icon" col="2"></Image>
+        <Image src="~/images/call.png" class="contact-icon" col="3"></Image>
+      </GridLayout>
+      
+      <!-- Description -->
+      <Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." class="description"></Label>
+      <Label text="Read more" class="read-more" (tap)="expandDescription()"></Label>
+      
+      <!-- Weight Selection -->
+      <Label text="Select Weight" class="weight-label"></Label>
+      <StackLayout orientation="horizontal" class="weight-options">
+        <Button *ngFor="let w of weights" [text]="w" class="weight-btn" [class.active]="selectedWeight === w" (tap)="selectWeight(w)"></Button>
+      </StackLayout>
+      
+      <!-- Price & Cart Button -->
+      <Label [text]="'Total Price: $' + price" class="price"></Label>
+      <Button text="Add to Cart" class="add-cart" (tap)="addToCart()"></Button>
+    </StackLayout>
+  </ScrollView>
