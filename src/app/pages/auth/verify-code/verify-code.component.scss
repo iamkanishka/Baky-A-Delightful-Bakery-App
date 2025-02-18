@@ -1,0 +1,73 @@
+.container {
+    padding: 20;
+    align-items: center;
+}
+
+.title {
+    font-size: 22;
+    font-weight: bold;
+    margin-top: 20;
+}
+
+.subtitle {
+    font-size: 14;
+    color: gray;
+    text-align: center;
+    margin-top: 10;
+}
+
+.email {
+    font-size: 14;
+    font-weight: bold;
+    color: #9c5c2b; // Brown color
+    text-align: center;
+}
+
+.otp-container {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20;
+}
+
+.otp-box {
+    width: 50;
+    height: 50;
+    font-size: 18;
+    text-align: center;
+    border-width: 1;
+    border-radius: 5;
+    border-color: lightgray;
+    margin: 5;
+    background-color: #f4f4f4;
+}
+
+.info-text {
+    font-size: 14;
+    color: gray;
+    margin-top: 20;
+}
+
+.resend-link {
+    font-size: 14;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+    margin-top: 5;
+}
+
+.verify-button {
+    background-color: #9c5c2b; // Brown color
+    color: white;
+    font-size: 18;
+    border-radius: 25;
+    padding: 10;
+    margin-top: 30;
+    width: 80%;
+}
+
+.back-button {
+    font-family: "FontAwesome";
+    font-size: 20;
+    color: black;
+    margin: 10;
+}
