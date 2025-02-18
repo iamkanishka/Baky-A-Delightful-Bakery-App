@@ -1,1 +1,25 @@
-<p>verify-code works!</p>
+<ActionBar class="action-bar">
+    <StackLayout orientation="horizontal">
+        <Button text="&#xf104;" class="back-button" (tap)="goBack()"></Button>
+    </StackLayout>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout class="container">
+        <Label text="Verify Code" class="title"></Label>
+        <Label text="Please enter the code we just sent to email" class="subtitle"></Label>
+        <Label text="example@email.com" class="email"></Label>
+
+        <FlexboxLayout class="otp-container">
+            <TextField [(ngModel)]="otp1" class="otp-box" maxlength="1" keyboardType="number"></TextField>
+            <TextField [(ngModel)]="otp2" class="otp-box" maxlength="1" keyboardType="number"></TextField>
+            <TextField [(ngModel)]="otp3" class="otp-box" maxlength="1" keyboardType="number"></TextField>
+            <TextField [(ngModel)]="otp4" class="otp-box" maxlength="1" keyboardType="number"></TextField>
+        </FlexboxLayout>
+
+        <Label text="Didn't receive OTP?" class="info-text"></Label>
+        <Label text="Resend code" class="resend-link" (tap)="resendCode()"></Label>
+
+        <Button text="Verify" class="verify-button" (tap)="verifyOtp()"></Button>
+    </StackLayout>
+</ScrollView>
