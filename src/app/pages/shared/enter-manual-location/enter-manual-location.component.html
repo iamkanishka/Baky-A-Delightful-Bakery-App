@@ -1,0 +1,32 @@
+<ActionBar>
+    <NavigationButton text="&#x2190;" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <Label text="Enter Your Location" class="title"></Label>
+  </ActionBar>
+
+  <StackLayout class="container">
+    <!-- Search Input -->
+    <GridLayout columns="*, auto" class="search-bar">
+      <TextField hint="Search location" [(ngModel)]="searchQuery" (textChange)="onSearch()" col="0"></TextField>
+      <Image src="~/images/clear.png" class="clear-icon" (tap)="clearSearch()" col="1"></Image>
+    </GridLayout>
+    
+    <!-- Use Current Location -->
+    <StackLayout class="current-location" (tap)="useCurrentLocation()">
+      <Image src="~/images/location.png" class="location-icon"></Image>
+      <Label text="Use my current location"></Label>
+    </StackLayout>
+    
+    <!-- Search Results -->
+    <Label text="SEARCH RESULT" class="search-result-title"></Label>
+    <ListView [items]="searchResults" (itemTap)="selectLocation($event)" class="search-results">
+      <ng-template let-item="item">
+        <StackLayout class="result-item">
+          <Image src="~/images/location.png" class="location-icon"></Image>
+          <StackLayout>
+            <Label [text]="item.name" class="location-name"></Label>
+            <Label [text]="item.address" class="location-address"></Label>
+          </StackLayout>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
