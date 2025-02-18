@@ -1,1 +1,14 @@
-<p>enable-location works!</p>
+<ActionBar class="action-bar"></ActionBar>
+
+<ScrollView>
+    <StackLayout class="container">
+        <Image src="~/assets/location-icon.png" class="location-icon"></Image>
+
+        <Label text="What is Your Location?" class="title"></Label>
+        <Label text="To Find Nearby Bakery Shop." class="subtitle"></Label>
+
+        <Button text="Allow Location Access" class="location-button" (tap)="getLocation()"></Button>
+        
+        <Label text="Enter Location Manually" class="manual-link" (tap)="enterLocationManually()"></Label>
+    </StackLayout>
+</ScrollView>
