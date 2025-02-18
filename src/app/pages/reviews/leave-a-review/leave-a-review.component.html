@@ -1,1 +1,43 @@
-<p>leave-a-review works!</p>
+<ActionBar title="Leave Review">
+    <NavigationButton text="&#x2190;" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+  </ActionBar>
+
+  <GridLayout rows="auto, auto, auto, auto, auto, auto, auto" columns="*" class="container">
+    
+    <!-- Product Info -->
+    <StackLayout row="0" class="product-info">
+      <GridLayout columns="auto, *" class="product">
+        <Image src="~/images/cake.jpg" class="product-image" col="0"></Image>
+        <StackLayout col="1">
+          <Label text="Chocolate Cake" class="product-title"></Label>
+          <Label text="Cake | Qty: 1 pcs" class="product-desc"></Label>
+          <Label text="$50.00" class="product-price"></Label>
+        </StackLayout>
+      </GridLayout>
+      <Button text="Re-Order" class="reorder-btn"></Button>
+    </StackLayout>
+
+    <!-- Review Prompt -->
+    <Label row="1" text="How is your order?" class="review-heading"></Label>
+    <Label row="2" text="Your overall rating" class="rating-label"></Label>
+
+    <!-- Star Rating -->
+    <StackLayout row="3" orientation="horizontal" class="star-rating">
+      <Image *ngFor="let star of stars; let i = index" [src]="star" (tap)="rate(i+1)" class="star"></Image>
+    </StackLayout>
+
+    <!-- Detailed Review -->
+    <TextView row="4" hint="Enter here" class="review-input" [(ngModel)]="reviewText"></TextView>
+    
+    <!-- Add Photo -->
+    <StackLayout row="5" orientation="horizontal" class="add-photo" (tap)="pickImage()">
+      <Image src="~/images/add-photo.png" class="add-photo-icon"></Image>
+      <Label text="add photo"></Label>
+    </StackLayout>
+
+    <!-- Buttons -->
+    <StackLayout row="6" orientation="horizontal" class="buttons">
+      <Button text="Cancel" class="cancel-btn" (tap)="cancel()"></Button>
+      <Button text="Submit" class="submit-btn" (tap)="submitReview()"></Button>
+    </StackLayout>
+  </GridLayout>
