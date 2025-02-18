@@ -1,1 +1,14 @@
-<p>enable-notifications works!</p>
+<ActionBar class="action-bar"></ActionBar>
+
+<ScrollView>
+    <StackLayout class="container">
+        <Image src="~/assets/bell-icon.png" class="notification-icon"></Image>
+
+        <Label text="Enable Notification Access" class="title"></Label>
+        <Label text="Enable notifications to receive real-time updates." class="subtitle"></Label>
+
+        <Button text="Allow Notification" class="notification-button" (tap)="requestPushNotificationPermission()"></Button>
+        
+        <Label text="Maybe Later" class="later-link" (tap)="maybeLater()"></Label>
+    </StackLayout>
+</ScrollView>
