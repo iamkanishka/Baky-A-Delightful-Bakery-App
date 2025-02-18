@@ -1,0 +1,19 @@
+.page { background-color: #f8f8f8; }
+.container { padding: 20; }
+.product-info { margin-bottom: 20; }
+.product { align-items: center; }
+.product-image { width: 60; height: 60; border-radius: 10; }
+.product-title { font-size: 18; font-weight: bold; }
+.product-desc { font-size: 14; color: gray; }
+.product-price { font-size: 16; font-weight: bold; margin-top: 5; }
+.reorder-btn { background-color: brown; color: white; border-radius: 10; }
+.review-heading { font-size: 20; font-weight: bold; text-align: center; margin-top: 20; }
+.rating-label { font-size: 16; text-align: center; margin-bottom: 10; }
+.star-rating { justify-content: center; flex-direction: row; }
+.star { width: 30; height: 30; margin: 5; }
+.review-input { background-color: white; border-radius: 10; padding: 10; height: 100; }
+.add-photo { flex-direction: row; align-items: center; margin-top: 10; }
+.add-photo-icon { width: 30; height: 30; margin-right: 10; }
+.buttons { flex-direction: row; justify-content: space-between; margin-top: 20; }
+.cancel-btn { background-color: lightgray; border-radius: 10; }
+.submit-btn { background-color: brown; color: white; border-radius: 10; }
