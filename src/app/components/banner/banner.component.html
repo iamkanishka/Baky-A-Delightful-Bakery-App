@@ -1,1 +1,80 @@
-<p>banner works!</p>
+<!-- Special Offers  -->
+<!-- Special Offers Text  -->
+<FlexboxLayout
+  height="auto"
+  paddingTop="20"
+  flexDirection="row"
+  justifyContent="space-between"
+  alignItems="center"
+  #container
+>
+  <!-- Left: "Special Offers" Title -->
+  <Label
+    text="Special Offers"
+    fontSize="20"
+    color="#000000"
+    fontWeight="bold"
+  ></Label>
+
+  <!-- Right: "See All" Link -->
+  <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+  </Label>
+</FlexboxLayout>
+
+<!-- /Special Offers Text  -->
+
+<!-- Special Offers Banners  -->
+
+<GridLayout rows="auto, auto">
+  <!-- Ensures only one slide is fully visible -->
+  <ScrollView
+    #carouselScrollView
+    orientation="horizontal"
+    scrollBarIndicatorVisible="false"
+    (scroll)="onScroll($event)"
+  >
+    <FlexboxLayout flexDirection="row">
+      <FlexboxLayout
+        *ngFor="let item of items; let i = index"
+        height="100%"
+        width="auto"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="15"
+      >
+        <GridLayout
+          rows="*"
+          columns="*"
+          backgroundColor="white"
+          borderRadius="10"
+          borderColor="rgba(0,0,0,0.1)"
+          androidElevation="5"
+          margin="10"
+        >
+          <Image [src]="item.imgURL" stretch="fill" borderRadius="10"></Image>
+        </GridLayout>
+      </FlexboxLayout>
+    </FlexboxLayout>
+  </ScrollView>
+
+  <!-- Navigation Dots Positioned Below -->
+  <FlexboxLayout
+    row="1"
+    flexDirection="row"
+    justifyContent="center"
+    paddingTop="6px"
+    paddingBottom="6px"
+  >
+    <Label
+      *ngFor="let dot of items; let i = index"
+      [text]="currentIndex === i ? '●' : '○'"
+      marginRight="3"
+      marginLeft="3"
+      fontSize="20"
+      color="#8B4513"
+    ></Label>
+  </FlexboxLayout>
+</GridLayout>
+<!-- /Special Offers Banners  -->
+<!-- /Special Offers -->
