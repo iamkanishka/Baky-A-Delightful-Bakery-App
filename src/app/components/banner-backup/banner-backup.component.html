@@ -1,1 +1,57 @@
-<p>banner-backup works!</p>
+<GridLayout rows="auto, auto" class="carousel-container">
+    <!-- Ensures only one slide is fully visible -->
+    <ScrollView
+      #carouselScrollView
+      orientation="horizontal"
+      scrollBarIndicatorVisible="false"
+      (scroll)="onScroll($event)"
+      height="30%"
+      row="0"
+    >
+      <StackLayout orientation="horizontal" class="carousel-wrapper">
+        <StackLayout
+          *ngFor="let item of items; let i = index"
+          width="{{ screenWidth }}"
+          height="100%"
+          class="carousel-item"
+          horizontalAlignment="center"
+          verticalAlignment="center"
+          borderRadius="15"
+        >
+          <!--
+          <Label [text]="item.text" class="carousel-label"></Label>-->
+          <GridLayout rows="*" columns="*" class="card">
+            <Image
+              [src]="item.imgURL"
+              stretch="aspectFill"
+              class="card-image"
+              ></Image>
+                  <!--
+            <StackLayout row="1" class="card-content">
+              <Label text="Awesome Card" class="card-title"></Label>
+           
+              <Label
+                text="This is a simple card created in NativeScript with Angular. The height of the card will adjust automatically based on the content inside."
+                class="card-description"
+              ></Label>
+            </StackLayout>
+            -->
+          </GridLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Navigation Dots Positioned Below -->
+    <StackLayout
+      row="1"
+      orientation="horizontal"
+      horizontalAlignment="center"
+      class="dots-container"
+    >
+      <Label
+        *ngFor="let dot of items; let i = index"
+        [text]="currentIndex === i ? '●' : '○'"
+        class="dot"
+      ></Label>
+    </StackLayout>
+  </GridLayout>
