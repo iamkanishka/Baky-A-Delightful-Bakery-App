@@ -1,13 +1,31 @@
 <FlexboxLayout
   flexDirection="row"
   flexWrap="wrap"
-  justifyContent="space-around"
-  padding="16"
+  justifyContent="space-between"
+  paddingTop="10"
 >
   @for( category of categories; track category.labelText ){
-  <FlexboxLayout flexDirection="column"  alignItems="center" width="80">
-    <Image [src]="category.categroyImageURL" class="category-icon" />
-    <Label [text]="category.labelText" class="category-label"></Label>
+  <FlexboxLayout
+    flexDirection="column"
+    flexWrap="nowrap"
+    alignItems="center"
+    width="80"
+    paddingBottom="10"
+    >
+    <Image
+      [src]="category.categroyImageURL"
+      width="50"
+      height="50"
+      borderRadius="50%"
+      backgroundColor="#F5F1EB"
+    />
+    <Label
+      [text]="category.labelText"
+      fontSize="14"
+      fontWeight="bold"
+      color="#654321"
+      marginTop="5"
+    ></Label>
   </FlexboxLayout>
 
   }
