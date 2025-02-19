@@ -28,38 +28,4 @@
   }
 }
 
-// Common page class
-// .page__content {
-//   &-icon,
-//   &-placeholder {
-//     color: const(grey);
-//     font-size: 20;
-//     vertical-align: center;
-//     horizontal-align: center;
-//   }
-
-//   &-icon {
-//     font-size: 32;
-//     vertical-align: top;
-//     margin-top: 20%;
-//   }
-// }
-
-
-.container {
-  padding: 20;
-}
-.card {
-  background-color: #8B4513; /* Brown color */
-  border-radius: 20;
-  padding: 20;
-  width: 90%;
-  margin-left: 5%;
-  margin-top: 20;
-}
-.card-title {
-  color: white;
-  font-size: 20;
-  text-align: center;
-}
 
