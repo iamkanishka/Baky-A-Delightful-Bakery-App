@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './home-header.component.scss'
 })
 export class HomeHeaderComponent {
+ 
 
+  onFilterTap() {
+    console.log('Filter button clicked!');
+    // Open filter modal or perform filtering logic here
+  }
 }
