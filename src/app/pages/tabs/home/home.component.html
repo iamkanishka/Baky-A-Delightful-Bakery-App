@@ -9,7 +9,7 @@
       padding="20"
       style="border-bottom-left-radius: 30; border-bottom-right-radius: 30"
     >
-    <!--
+      <!--
       <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
       </FlexboxLayout>
       <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
@@ -20,159 +20,72 @@
     </FlexboxLayout>
     <!-- /Header -->
 
-    <!-- Special Offers  -->
-    <!-- Special Offers Text  -->
+    <FlexboxLayout flexDirection="column" paddingRight="20" paddingLeft="20">
+      <!-- Special Offers   -->
+      <app-banner></app-banner>
+      <!-- /Special Offers  -->
 
-    <FlexboxLayout
-      height="auto"
-      paddingTop="20"
-      paddingRight="20"
-      paddingLeft="20"
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
-      <!-- Left: "Special Offers" Title -->
-      <Label
-        text="Special Offers"
-        fontSize="20"
-        color="#000000"
-        fontWeight="bold"
-      ></Label>
+      <!-- Categories   -->
+      <!-- Categories Text  -->
 
-      <!-- Right: "See All" Link -->
-      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
-      </Label>
-    </FlexboxLayout>
-
-    <!-- /Special Offers Text  -->
-
-    <!-- Special Offers Banners  -->
-
-    <GridLayout rows="auto, auto" class="carousel-container">
-      <!-- Ensures only one slide is fully visible -->
-      <ScrollView
-        #carouselScrollView
-        orientation="horizontal"
-        scrollBarIndicatorVisible="false"
-        (scroll)="onScroll($event)"
-        height="30%"
-        row="0"
+      <FlexboxLayout
+        height="auto"
+        paddingTop="10"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
       >
-        <StackLayout orientation="horizontal" class="carousel-wrapper">
-          <StackLayout
-            *ngFor="let item of items; let i = index"
-            width="{{ screenWidth }}"
-            height="100%"
-            class="carousel-item"
-            horizontalAlignment="center"
-            verticalAlignment="center"
-            borderRadius="15"
-          >
-            <!--
-            <Label [text]="item.text" class="carousel-label"></Label>-->
-            <GridLayout rows="*" columns="*" class="card">
-              <Image
-                [src]="item.imgURL"
-                stretch="aspectFill"
-                class="card-image"
-                ></Image>
-                    <!--
-              <StackLayout row="1" class="card-content">
-                <Label text="Awesome Card" class="card-title"></Label>
-             
-                <Label
-                  text="This is a simple card created in NativeScript with Angular. The height of the card will adjust automatically based on the content inside."
-                  class="card-description"
-                ></Label>
-              </StackLayout>
-              -->
-            </GridLayout>
-          </StackLayout>
-        </StackLayout>
-      </ScrollView>
-
-      <!-- Navigation Dots Positioned Below -->
-      <StackLayout
-        row="1"
-        orientation="horizontal"
-        horizontalAlignment="center"
-        class="dots-container"
-      >
+        <!-- Left: "Categories" Title -->
         <Label
-          *ngFor="let dot of items; let i = index"
-          [text]="currentIndex === i ? '●' : '○'"
-          class="dot"
+          text="Categories"
+          fontSize="20"
+          color="#000000"
+          fontWeight="bold"
         ></Label>
-      </StackLayout>
-    </GridLayout>
-    <!-- /Special Offers Banners  -->
-    <!-- /Special Offers -->
 
-    <!-- Categories   -->
-    <!-- /Categories Text  -->
+        <!-- Right: "See All" Link -->
+        <Label
+          text="See All"
+          fontSize="12"
+          color="#8B4513"
+          fontWeight="normal"
+          (tap)="naviagteToCategories()"
+        >
+        </Label>
+      </FlexboxLayout>
 
-    <FlexboxLayout
-      height="auto"
-      paddingTop="10"
-      paddingRight="20"
-      paddingLeft="20"
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
-      <!-- Left: "Categories" Title -->
-      <Label
-        text="Categories"
-        fontSize="20"
-        color="#000000"
-        fontWeight="bold"
-      ></Label>
+      <!-- /Categories text  -->
 
-      <!-- Right: "See All" Link -->
-      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal" (tap)="naviagteToCategories()">
-      </Label>
+      <app-categories-list categoriesQT="4"></app-categories-list>
+
+      <!-- /Categories  -->
+
+      <!-- Featured Products   -->
+      <!-- /Featured Products Text  -->
+
+      <FlexboxLayout
+        height="auto"
+        paddingTop="10"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <!-- Left: "Featured Products" Title -->
+        <Label
+          text="Featured Products"
+          fontSize="20"
+          color="#000000"
+          fontWeight="bold"
+        ></Label>
+
+        <!-- Right: "See All" Link -->
+        <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+        </Label>
+      </FlexboxLayout>
+
+      <!-- /Featured Products text  -->
+
+      <!-- /Featured Products  -->
     </FlexboxLayout>
-
-    <!-- /Categories text  -->
-
-    <app-categories-list categoriesQT="4"></app-categories-list>
- 
-
-    <!-- /Categories  -->
-
-
-       <!-- Featured Products   -->
-    <!-- /Featured Products Text  -->
-
-    <FlexboxLayout
-      height="auto"
-      paddingTop="10"
-      paddingRight="20"
-      paddingLeft="20"
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
-      <!-- Left: "Featured Products" Title -->
-      <Label
-        text="Featured Products"
-        fontSize="20"
-        color="#000000"
-        fontWeight="bold"
-      ></Label>
-
-      <!-- Right: "See All" Link -->
-      <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
-      </Label>
-    </FlexboxLayout>
-
-    <!-- /Featured Products text  -->
- 
-
-    <!-- /Featured Products  -->
-
-
-
   </StackLayout>
 </ScrollView>
