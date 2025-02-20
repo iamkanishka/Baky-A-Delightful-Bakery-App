@@ -86,6 +86,69 @@
       <!-- /Featured Products text  -->
 
       <!-- /Featured Products  -->
+
+
+
+
+      <ScrollView orientation="horizontal">
+        <StackLayout orientation="horizontal" class="product-list">
+   
+
+          <app-featured-product-card *ngFor="let item of featuredProducts" [product]="item"></app-featured-product-card>
+        </StackLayout>
+      </ScrollView>
+
+
+
+
+
+
+
+      <GridLayout rows="auto, auto" marginTop="20">
+        <!-- Scrollable Carousel -->
+      
+         <!--
+        <ScrollView
+        #carouselScrollView
+        orientation="horizontal"
+        scrollBarIndicatorVisible="false"
+        (scroll)="onScroll($event)"
+        (swipe)="onSwipe($event)"
+      >
+    
+      
+        <ScrollView
+          #carouselScrollView
+          orientation="horizontal"
+          scrollBarIndicatorVisible="false"
+          
+        >
+          <FlexboxLayout flexDirection="row">
+            <FlexboxLayout
+              *ngFor="let item of items; let i = index"
+              height="100%"
+              width="{{ screenWidth }}" 
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridLayout rows="*" columns="*" backgroundColor="white" borderRadius="15">
+                <Image [src]="item.imgURL" stretch="aspectFill" borderRadius="15"></Image>
+              </GridLayout>
+            </FlexboxLayout>
+          </FlexboxLayout>
+        </ScrollView>
+        -->
+  
+      </GridLayout>
+
+
+
+
     </FlexboxLayout>
+
+
+
+
   </StackLayout>
 </ScrollView>
