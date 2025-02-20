@@ -1,6 +1,6 @@
  
 import { Component, ElementRef, ViewChild, AfterViewInit} from "@angular/core";
-import { Screen, ScrollView } from "@nativescript/core";
+import { Screen } from "@nativescript/core";
 
 @Component({
   selector: 'app-banner',
@@ -21,43 +21,61 @@ export class BannerComponent  implements AfterViewInit  {
   ];
   screenWidth: number = Screen.mainScreen.widthDIPs;
   currentIndex = 0;
+  autoSlideInterval: any;
 
-  ngOnInit() {
-    setInterval(() => this.nextSlide(), 3000); // Auto-slide every 3 seconds
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.screenWidth = this.scrollViewRef.nativeElement.getActualSize().width;
+      this.startAutoSlide();
+    }, 500);
+  }
+
+  startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => this.nextSlide(), 3000);
+  }
+
+  stopAutoSlide() {
+    clearInterval(this.autoSlideInterval);
   }
 
   nextSlide() {
     if (!this.scrollViewRef) return;
 
-    const scrollView = this.scrollViewRef.nativeElement as ScrollView;
-    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+    const scrollView = this.scrollViewRef.nativeElement;
+    if (this.currentIndex < this.items.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0; // Loop back
+    }
 
-    scrollView.scrollToHorizontalOffset(
-      this.currentIndex * this.screenWidth,
-      true
-    );
+    scrollView.scrollToHorizontalOffset(this.currentIndex * this.screenWidth, true);
+  }
+
+  prevSlide() {
+    if (!this.scrollViewRef) return;
+
+    const scrollView = this.scrollViewRef.nativeElement;
+    this.currentIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.items.length - 1;
+
+    scrollView.scrollToHorizontalOffset(this.currentIndex * this.screenWidth, true);
   }
 
   onScroll(event: any) {
-    const scrollView = this.scrollViewRef.nativeElement as ScrollView;
-    this.currentIndex = Math.round(
-      scrollView.horizontalOffset / this.screenWidth
-    );
-
-    
-
+    const scrollView = this.scrollViewRef.nativeElement;
+    this.currentIndex = Math.round(scrollView.horizontalOffset / this.screenWidth);
+    this.stopAutoSlide();
+    this.startAutoSlide();
   }
 
-  @ViewChild('container', { static: false }) container!: ElementRef;
-
-  ngAfterViewInit() {
-    const nativeView = this.container.nativeElement;
-    const totalWidth = nativeView.getActualSize().width;
-    const paddingLeft = nativeView.style.paddingLeft || 0;
-    const paddingRight = nativeView.style.paddingRight || 0;
-
-    const availableWidth = totalWidth - paddingLeft - paddingRight;
-    console.log('Available Width:', availableWidth);
+  onSwipe(event: any) {
+    if (event.direction === 1) {
+      this.nextSlide();
+    } else if (event.direction === 2) {
+      this.prevSlide();
+    }
   }
 
+  ngOnDestroy() {
+    this.stopAutoSlide();
+  }
 }
