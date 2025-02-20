@@ -1,68 +1,144 @@
-<FlexboxLayout flexDirection="column" >
-  <!-- Location Section -->
+<!-- Location Section -->
+<FlexboxLayout
+  flexDirection="row"
+  flexGrow="3"
+  alignItems="center"
+  justifyContent="space-between"
+>
   <FlexboxLayout
-    flexDirection="row"
-    flexGrow="3"
-    alignItems="center"
-    justifyContent="space-between"
+    flexDirection="column"
+    justifyContent="flex-start"
+    alignItems="flex-start"
   >
+    <Label text="Location" color="#b6926f" fontSize="12"></Label>
+
     <FlexboxLayout flexDirection="row" alignItems="center">
       <Image
-        src="https://img.icons8.com/?size=100&id=7880&format=png&color=CE9D1E"
+        src="https://img.icons8.com/?size=100&id=Hh5ONdvsAI4P&format=png&color=f4c379"
         width="20"
         height="20"
         marginRight="5"
       ></Image>
-      <Label text="New York, USA" class="location-label"></Label>
+      <Label
+        text="New York, USA"
+        color="white"
+        fontSize="16"
+        fontWeight="500"
+      ></Label>
       <Image
-        src="https://img.icons8.com/?size=100&id=60662&format=png&color=000000"
+        src="https://img.icons8.com/?size=100&id=60662&format=png&color=FFFFFF"
         width="15"
         height="15"
         marginLeft="5"
       ></Image>
     </FlexboxLayout>
-
-    <!-- Cart and Notification Icons -->
-    <FlexboxLayout flexDirection="row">
-      <Image
-        src="https://img.icons8.com/?size=100&id=84926&format=png&color=FFFFFF"
-        width="30"
-        height="30"
-        marginRight="10"
-      />
-      <Image
-        src="https://img.icons8.com/?size=100&id=84025&format=png&color=FFFFFF"
-        width="30"
-        height="30"
-      />
-      <Image
-        src="https://img.icons8.com/?size=100&id=78983&format=png&color=000000"
-        width="10"
-        height="10"
-        class="notification-dot"
-      />
-    </FlexboxLayout>
   </FlexboxLayout>
 
-  <!-- Search Bar -->
+  <!-- Cart and Notification Icons -->
+  <FlexboxLayout flexDirection="row">
+    <FlexboxLayout
+      flexDirection="row"
+      flexGrow="1"
+      justifyContent="center"
+      backgroundColor="#9a683a"
+      padding="8"
+      borderRadius="5"
+      marginRight="10"
+    >
+      <Image
+        src="https://img.icons8.com/?size=100&id=84926&format=png&color=FFFFFF"
+        width="25"
+        height="25"
+      />
+    </FlexboxLayout>
+
+    <FlexboxLayout
+      flexDirection="row"
+      flexGrow="1"
+      justifyContent="center"
+      backgroundColor="#9a683a"
+      padding="8"
+      borderRadius="5"
+    >
+    
+      <Image
+        src="https://img.icons8.com/?size=100&id=ZRVMY0SUfdBx&format=png&color=FFFFFF"
+        width="25"
+        height="25"
+        class="notification-container"
+      >
+    
+      <Label   [text]="" class="notification-badge"></Label>
+    </Image>
+     
+    </FlexboxLayout>
+  </FlexboxLayout>
+</FlexboxLayout>
+
+<!-- Search Bar -->
+
+<FlexboxLayout flexDirection="row" flexGrow="1">
+
+  <FlexboxLayout
+    flexDirection="row"
+    alignItems="center"
+    backgroundColor="white"
+    marginTop="15"
+    padding="4"
+    height="40"
+    borderRadius="5"
+    marginRight="10"
+    width="85%"
+  >
+    <Image
+      src="https://img.icons8.com/?size=100&id=59878&format=png&color=a57549"
+      width="25"
+      height="25"
+      marginLeft="10"
+      paddingRight="10"
+    />
+    <TextField
+      hint="Search"
+      flexGrow="1"
+      color="black"
+      fontSize="16"
+      borderWidth="0"
+    />
+  </FlexboxLayout>
+
   <FlexboxLayout
     flexDirection="row"
     flexGrow="1"
-    alignItems="center"
-    class="search-bar"
+    justifyContent="center"
+    backgroundColor="white"
+    marginTop="15"
+    padding="5"
+    height="40"
+    borderRadius="5"
+    marginRight="10"
+    width="15%"
   >
     <Image
-      src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000"
-      width="20"
-      height="20"
-      marginLeft="10"
-    />
-    <TextField hint="Search" class="search-field" />
-    <Image
-      src="https://img.icons8.com/?size=100&id=21636&format=png&color=000000"
+      src="https://img.icons8.com/?size=100&id=7Hd4kfeSDA3t&format=png&color=7E420C"
       width="25"
       height="25"
-      marginRight="10"
-    />
+      rotate="90"
+    ></Image>
+ 
   </FlexboxLayout>
 </FlexboxLayout>
+
+<!-- 
+<FlexboxLayout flexDirection="row" class="search-container">
+
+  <FlexboxLayout flexDirection="row" alignItems="center" class="search-box">
+    <Image src="https://img.icons8.com/?size=100&id=59878&format=png&color=a57549" class="search-icon"></Image>
+    <TextField hint="Search" class="search-input"></TextField>
+  </FlexboxLayout>
+
+ 
+  <Button class="filter-button">
+    <Image src="https://img.icons8.com/?size=100&id=21636&format=png&color=000000" class="filter-icon"></Image>
+  </Button>
+</FlexboxLayout>
+Search Input -->
