@@ -25,56 +25,54 @@
 
 <!-- Special Offers Banners  -->
 
-<GridLayout rows="auto, auto">
-  <!-- Ensures only one slide is fully visible -->
+<GridLayout rows="auto, auto" marginTop="20">
+  <!-- Scrollable Carousel -->
+
+   <!--
+  <ScrollView
+  #carouselScrollView
+  orientation="horizontal"
+  scrollBarIndicatorVisible="false"
+  (scroll)="onScroll($event)"
+  (swipe)="onSwipe($event)"
+>
+-->
+
   <ScrollView
     #carouselScrollView
     orientation="horizontal"
     scrollBarIndicatorVisible="false"
-    (scroll)="onScroll($event)"
+    
   >
     <FlexboxLayout flexDirection="row">
       <FlexboxLayout
         *ngFor="let item of items; let i = index"
         height="100%"
-        width="auto"
+        width="{{ screenWidth }}" 
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        borderRadius="15"
       >
-        <GridLayout
-          rows="*"
-          columns="*"
-          backgroundColor="white"
-          borderRadius="10"
-          borderColor="rgba(0,0,0,0.1)"
-          androidElevation="5"
-          margin="10"
-        >
-          <Image [src]="item.imgURL" stretch="fill" borderRadius="10"></Image>
+        <GridLayout rows="*" columns="*" backgroundColor="white" borderRadius="15">
+          <Image [src]="item.imgURL" stretch="aspectFill" borderRadius="15"></Image>
         </GridLayout>
       </FlexboxLayout>
     </FlexboxLayout>
   </ScrollView>
 
-  <!-- Navigation Dots Positioned Below -->
-  <FlexboxLayout
-    row="1"
-    flexDirection="row"
-    justifyContent="center"
-    paddingTop="6px"
-    paddingBottom="6px"
-  >
+  <!-- Navigation Dots -->
+  <FlexboxLayout row="1" flexDirection="row" justifyContent="center" paddingTop="6px" paddingBottom="6px">
     <Label
       *ngFor="let dot of items; let i = index"
       [text]="currentIndex === i ? '●' : '○'"
       marginRight="3"
       marginLeft="3"
       fontSize="20"
-      color="#8B4513"
+      color="{{ currentIndex === i ? '#8B4513' : '#D3D3D3' }}"
+      opacity="{{ currentIndex === i ? 1 : 0.5 }}"
     ></Label>
   </FlexboxLayout>
 </GridLayout>
+
 <!-- /Special Offers Banners  -->
 <!-- /Special Offers -->
