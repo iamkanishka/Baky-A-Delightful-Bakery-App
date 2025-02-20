@@ -1,0 +1,30 @@
+ 
+<GridLayout rows="auto, auto, auto" columns="*" class="card" [width]="cardWidth">
+    <!-- Product Image -->
+    <Image  [src]="product.image" stretch="aspectFill" class="product-image"></Image>
+  
+    <!-- Rating & Favorite Button   -->
+  
+    <FlexboxLayout flexDirection="row"  >
+        
+        <FlexboxLayout class="rating">
+          <Image src="https://img.icons8.com/?size=100&id=60003&format=png&color=#CE9D1E" class="icon"></Image>
+          <Label [text]="product.rating" class="rating-text"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout class="favorite">
+          <Image src="https://img.icons8.com/?size=100&id=59805&format=png&color=#FA5252" class="icon"></Image>
+        </FlexboxLayout>
+    
+    </FlexboxLayout>
+
+  
+    <!-- Product Details -->
+    <StackLayout row="2" col="0" class="details">
+      <Label [text]="product.name" class="product-name"></Label>
+      <GridLayout columns="auto, auto" class="price-section">
+        <Label [text]="'$' + product.discountedPrice" class="price"></Label>
+        <Label [text]="'$' + product.originalPrice" class="original-price"></Label>
+      </GridLayout>
+    </StackLayout>
+  </GridLayout>
+  
