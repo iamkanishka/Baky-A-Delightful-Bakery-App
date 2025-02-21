@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
+import { Page } from '@nativescript/core';
 
 
 @Component({
   selector: 'app-product-detail',
-  
-  templateUrl: './product-detail.component.html',
+   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })
 export class ProductDetailComponent {
-  thumbnails = ['~/images/cake1.jpg', '~/images/cake2.jpg', '~/images/cake3.jpg', '~/images/cake4.jpg'];
+  thumbnails = ['https://assets.winni.in/product/primary/2023/3/83221.jpeg', 'https://www.fnp.com/images/pr/m/v300/black-forest-cake-half-kg.jpg', 'https://www.shreemithai.com/cdn/shop/products/black-forest-cake-222028.jpg', 'https://merakcakes.com/cdn/shop/files/VanillaChocoChipsCake.jpg'];
   weights = ['0.5 Kg', '1 Kg', '1.5 Kg', '2 Kg', '4 Kg'];
   selectedWeight = '0.5 Kg';
   price = 25;
 
-  constructor(private router: RouterExtensions) {}
+  constructor(private router: RouterExtensions, private _page: Page,) {
+    console.log('Prooduct Detail component');
+    this._page.actionBarHidden = true;
+    
+  }
+
+ 
 
   goBack() {
     this.router.back();
