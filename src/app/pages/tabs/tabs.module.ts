@@ -11,8 +11,4 @@ import { TabsComponent } from "./tabs.component";
   imports: [NativeScriptCommonModule, TabsRoutingModule],
   schemas: [NO_ERRORS_SCHEMA],
 })
-export class TabsModule {
-  constructor() {
-    console.log("TabsModule");
-  }
-}
+export class TabsModule {}
