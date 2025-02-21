@@ -9,13 +9,6 @@
       padding="20"
       style="border-bottom-left-radius: 30; border-bottom-right-radius: 30"
     >
-      <!--
-      <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
-      </FlexboxLayout>
-      <FlexboxLayout flexGrow="2" flexDirection="row" backgroundColor="#8B4513">
-      </FlexboxLayout>
-      -->
-
       <app-home-header></app-home-header>
     </FlexboxLayout>
     <!-- /Header -->
@@ -61,94 +54,9 @@
       <!-- /Categories  -->
 
       <!-- Featured Products   -->
-      <!-- /Featured Products Text  -->
+      <app-featured-products></app-featured-products>
 
-      <FlexboxLayout
-        height="auto"
-        paddingTop="10"
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <!-- Left: "Featured Products" Title -->
-        <Label
-          text="Featured Products"
-          fontSize="20"
-          color="#000000"
-          fontWeight="bold"
-        ></Label>
-
-        <!-- Right: "See All" Link -->
-        <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
-        </Label>
-      </FlexboxLayout>
-
-      <!-- /Featured Products text  -->
-
-      <!-- /Featured Products  -->
-
-
-
-
-      <ScrollView orientation="horizontal">
-        <StackLayout orientation="horizontal" class="product-list">
-   
-
-          <app-featured-product-card *ngFor="let item of featuredProducts" [product]="item"></app-featured-product-card>
-        </StackLayout>
-      </ScrollView>
-
-
-
-
-
-
-
-      <GridLayout rows="auto, auto" marginTop="20">
-        <!-- Scrollable Carousel -->
-      
-         <!--
-        <ScrollView
-        #carouselScrollView
-        orientation="horizontal"
-        scrollBarIndicatorVisible="false"
-        (scroll)="onScroll($event)"
-        (swipe)="onSwipe($event)"
-      >
-    
-      
-        <ScrollView
-          #carouselScrollView
-          orientation="horizontal"
-          scrollBarIndicatorVisible="false"
-          
-        >
-          <FlexboxLayout flexDirection="row">
-            <FlexboxLayout
-              *ngFor="let item of items; let i = index"
-              height="100%"
-              width="{{ screenWidth }}" 
-              flexDirection="column"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <GridLayout rows="*" columns="*" backgroundColor="white" borderRadius="15">
-                <Image [src]="item.imgURL" stretch="aspectFill" borderRadius="15"></Image>
-              </GridLayout>
-            </FlexboxLayout>
-          </FlexboxLayout>
-        </ScrollView>
-        -->
-  
-      </GridLayout>
-
-
-
-
+      <!-- /Featured Products   -->
     </FlexboxLayout>
-
-
-
-
   </StackLayout>
 </ScrollView>
