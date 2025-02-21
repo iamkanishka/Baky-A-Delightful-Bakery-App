@@ -1,0 +1,35 @@
+<!-- Featured Products   -->
+<!-- /Featured Products Text  -->
+
+<FlexboxLayout
+  height="auto"
+  paddingTop="10"
+  flexDirection="row"
+  justifyContent="space-between"
+  alignItems="center"
+>
+  <!-- Left: "Featured Products" Title -->
+  <Label
+    text="Featured Products"
+    fontSize="20"
+    color="#000000"
+    fontWeight="bold"
+  ></Label>
+
+  <!-- Right: "See All" Link -->
+  <Label text="See All" fontSize="12" color="#8B4513" fontWeight="normal">
+  </Label>
+</FlexboxLayout>
+
+<!-- /Featured Products text  -->
+
+<!-- /Featured Products  -->
+
+<ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" marginTop="20">
+  <FlexboxLayout flexDirection="row">
+    <app-featured-product-card
+      *ngFor="let item of featuredProducts"
+      [product]="item"
+    ></app-featured-product-card>
+  </FlexboxLayout>
+</ScrollView>
