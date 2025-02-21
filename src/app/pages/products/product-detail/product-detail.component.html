@@ -1,15 +1,15 @@
 <ActionBar>
     <NavigationButton text="&#x2190;" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
     <StackLayout orientation="horizontal" class="action-icons">
-      <Image src="~/images/heart.png" class="icon"></Image>
-      <Image src="~/images/share.png" class="icon"></Image>
+      <Image src="https://img.icons8.com/?size=100&id=85339&format=png&color=FF0000" class="icon"></Image>
+      <Image src="https://img.icons8.com/?size=100&id=TDCU7KRViM2Q&format=png&color=000000" class="icon"></Image>
     </StackLayout>
   </ActionBar>
 
-  <ScrollView>
-    <StackLayout class="container">
+  <ScrollView backgroundColor="white">
+    <StackLayout class="container" >
       <!-- Product Image and Thumbnails -->
-      <Image src="~/images/cake.jpg" class="product-image"></Image>
+      <Image src="https://www.eventshoppe.co.in:9021/file-system/image/687" class="product-image"></Image>
       <ScrollView orientation="horizontal" class="thumbnail-container">
         <StackLayout orientation="horizontal">
           <Image *ngFor="let img of thumbnails" [src]="img" class="thumbnail"></Image>
@@ -20,18 +20,18 @@
       <Label text="Chocolate Cake" class="product-title"></Label>
       <StackLayout orientation="horizontal" class="rating-section">
         <Label text="4.9" class="rating"></Label>
-        <Image src="~/images/star.png" class="star-icon"></Image>
+        <Image src="https://img.icons8.com/?size=100&id=8ggStxqyboK5&format=png&color=000000" class="star-icon"></Image>
       </StackLayout>
       
       <!-- Seller Info -->
       <GridLayout columns="auto, *" class="seller-info">
-        <Image src="~/images/seller.jpg" class="seller-image" col="0"></Image>
+        <Image src="https://img.icons8.com/?size=100&id=CSToOclMmlIh&format=png&color=000000" class="seller-image" col="0"></Image>
         <StackLayout col="1">
           <Label text="Jenny Wilson" class="seller-name"></Label>
           <Label text="Cook" class="seller-role"></Label>
         </StackLayout>
-        <Image src="~/images/chat.png" class="contact-icon" col="2"></Image>
-        <Image src="~/images/call.png" class="contact-icon" col="3"></Image>
+        <Image src="https://img.icons8.com/?size=100&id=jOjH1Mt48Fp1&format=png&color=000000" class="contact-icon" col="2"></Image>
+        <Image src="https://img.icons8.com/?size=100&id=85059&format=png&color=000000" class="contact-icon" col="3"></Image>
       </GridLayout>
       
       <!-- Description -->
