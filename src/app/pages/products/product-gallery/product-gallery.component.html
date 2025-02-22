@@ -1,9 +1,47 @@
 <StackLayout backgroundColor="white">
   <GridLayout rows="*" columns="*">
-    <Image row="0" col="0" src="https://images.pexels.com/photos/1721934/pexels-photo-1721934.jpeg?cs=srgb&dl=pexels-zvolskiy-1721934.jpg" stretch="fill" width="100%" height="100%" />
-    <FlexboxLayout row="0" col="0" flexDirection="column" justifyContent="flex-end" alignItems="center">
-          <Label text="i love you mummy "  color="black"></Label>
+    <Image
+      row="0"
+      col="0"
+      #imageRef
+      [src]="coverImage"
+      [stretch]="imageAspect"
+      width="100%"
+      height="100%"
+      (pinch)="onPinch($event)" 
+    />
+    <FlexboxLayout
+      row="0"
+      col="0"
+      flexDirection="column"
+      justifyContent="flex-end"
+      alignItems="center"
+    >
+      <FlexboxLayout
+        flexDirection="row"
+        [height]="thumbnailHeight"
+        [width]="thumbnailWidth"
+        [paddingBottom]="thumbnailBottomPadding"
+      >
+        <FlexboxLayout backgroundColor="white" borderWidth="1" borderColor="#8B4513" borderRadius="10">
+          <FlexboxLayout
+            flexDirection="column"
+            *ngFor="let img of thumbnails;let i = index"
+            padding="5"
+          >
+            <Image
+              borderRadius="10"
+              [src]="img"
+              stretch="fill"
+              height="100%"
+              width="100%"
+              (tap)="enlargeThumbnailimage(i)"
+               (doubleTap)="onDoubleTap()"
+            
+            ></Image>
+          </FlexboxLayout>
+        </FlexboxLayout>
+      </FlexboxLayout>
     </FlexboxLayout>
-   
   </GridLayout>
 </StackLayout>
