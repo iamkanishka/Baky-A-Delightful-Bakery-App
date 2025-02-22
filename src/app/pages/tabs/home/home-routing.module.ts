@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "categories", component: CatergoriesComponent },
   {
     path: "default",
-    component: ProductGalleryComponent,
+    component: ProductDetailComponent,
     loadChildren: () =>
       import("../../products/products.module").then((m) => m.ProductsModule),
   },
