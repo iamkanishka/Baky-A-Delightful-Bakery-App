@@ -31,6 +31,7 @@ export class ProductDetailComponent {
   weights = ['0.5 Kg', '1 Kg', '1.5 Kg', '2 Kg', '4 Kg'];
   selectedWeight = '0.5 Kg';
   price = 25;
+  totalPrice: number = 25.00;
 
   screenWidth:number = Screen.mainScreen.widthDIPs;
   screenHeight:number = Screen.mainScreen.heightDIPs;
@@ -39,9 +40,11 @@ export class ProductDetailComponent {
   thumbnailHeight:number = 0;
   thumbnailBottomPadding:number = 0;
 
+  rowsSet:string= String(this.screenHeight * 0.4) + ", *"
+
   private scale = 1; // Default scale
 
-  coverImage:string="https://images.pexels.com/photos/1721934/pexels-photo-1721934.jpeg?cs=srgb&dl=pexels-zvolskiy-1721934.jpg"; 
+  coverImage:string="https://img.freepik.com/premium-photo/choclate-cake-4k-image_758367-103.jpg"; 
 
  
 
@@ -106,12 +109,12 @@ export class ProductDetailComponent {
   
     checkOrientation(): void {
       this.isPortrait = this.screenHeight > this.screenWidth;
-      this.thumbnailHeight =  this.screenHeight * 0.13;
+      this.thumbnailHeight =  this.screenHeight * 0.12;
       this.thumbnailWidth =  this.screenWidth * 0.90;
   
   
       this.imageAspect = this.isPortrait ? "aspectFit" : "aspectFit";
-      this.thumbnailBottomPadding = this.isPortrait ? this.screenHeight * 0.05 : 0.03;
+      this.thumbnailBottomPadding = this.isPortrait ? this.screenHeight * 0.035 : 0.03;
   
   
       console.log(
@@ -123,6 +126,12 @@ export class ProductDetailComponent {
       this.checkOrientation();
     }
 
+    onReadMore(){
+
+    }
+
+ 
+  
 
 }
  
