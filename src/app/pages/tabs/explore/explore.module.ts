@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ExploreRoutingModule } from './explore-routing.module';
@@ -12,6 +12,7 @@ import { NativeScriptCommonModule } from '@nativescript/angular';
     CommonModule,
     NativeScriptCommonModule,
     ExploreRoutingModule
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class ExploreModule { }
