@@ -1,34 +1,34 @@
-<GridLayout rows="auto, auto, auto, *" class="page">
-    <!-- Search Bar Section -->
-    <FlexboxLayout row="0" class="search-bar">
-      <Image src="~/images/back.png" class="icon"></Image>
-      <TextField hint="Search.." class="search-input"></TextField>
-      <Image src="~/images/close.png" class="icon"></Image>
+<GridLayout rows="auto, auto, auto, *" backgroundColor="white" padding="16">
+    <!-- Search Bar -->
+    <FlexboxLayout row="0" flexDirection="row" alignItems="center" backgroundColor="#f3f3f3" padding="8" borderRadius="12">
+      <Image src="~/images/back.png" width="24" height="24" margin="8"></Image>
+      <TextField hint="Search.." flexGrow="1" fontSize="16"></TextField>
+      <Image src="~/images/close.png" width="24" height="24" margin="8"></Image>
     </FlexboxLayout>
   
     <!-- Recent Search -->
-    <StackLayout row="1" class="section">
-      <Label text="Recent Search" class="section-title"></Label>
-      <FlexboxLayout *ngFor="let item of recentSearches" class="recent-item">
-        <Label [text]="item" class="recent-text"></Label>
-        <Image src="~/images/close.png" class="remove-icon"></Image>
+    <StackLayout row="1" marginTop="16">
+      <Label text="Recent Search" fontSize="18" fontWeight="bold" marginBottom="8"></Label>
+      <FlexboxLayout *ngFor="let item of recentSearches" flexDirection="row" justifyContent="space-between" marginBottom="4">
+        <Label [text]="item" fontSize="16"></Label>
+        <Image src="~/images/close.png" width="16" height="16"></Image>
       </FlexboxLayout>
     </StackLayout>
   
     <!-- Recent View -->
-    <StackLayout row="2" class="section">
-      <Label text="Recent View" class="section-title"></Label>
+    <StackLayout row="2" marginTop="16">
+      <Label text="Recent View" fontSize="18" fontWeight="bold" marginBottom="8"></Label>
     </StackLayout>
   
     <!-- List of Recent Views -->
     <ListView [items]="recentViews" row="3">
       <ng-template let-item="item">
-        <FlexboxLayout class="list-item">
-          <Image [src]="item.image" class="item-image"></Image>
-          <StackLayout class="item-details">
-            <Label [text]="item.name" class="item-title"></Label>
-            <Label [text]="item.category" class="item-category"></Label>
-            <Label [text]="'$' + item.price" class="item-price"></Label>
+        <FlexboxLayout flexDirection="row" alignItems="center" padding="8" borderBottomWidth="1" borderBottomColor="#e0e0e0">
+          <Image [src]="item.image" width="50" height="50" borderRadius="8" marginRight="12"></Image>
+          <StackLayout flexGrow="1">
+            <Label [text]="item.name" fontSize="16" fontWeight="bold"></Label>
+            <Label [text]="item.category" fontSize="14" color="gray"></Label>
+            <Label [text]="'$' + item.price" fontSize="16" fontWeight="bold" color="black"></Label>
           </StackLayout>
         </FlexboxLayout>
       </ng-template>
