@@ -1,11 +1,33 @@
 <StackLayout backgroundColor="white">
-  <MapView
-    row="0"
-    col="0"
-    (ready)="onReady($event)"
-    (mapTap)="onTap($event)"
-    (mapLongPress)="onLongPress($event)"
-    (markerTap)="onMarkerTap($event)"
-  >
-  </MapView>
+  <!--
+  <GridLayout rows="*" columns="*">
+    <MapView
+      row="0"
+      col="0"
+      (ready)="onReady($event)"
+      (mapTap)="onTap($event)"
+      (mapLongPress)="onLongPress($event)"
+      (markerTap)="onMarkerTap($event)"
+    >
+    </MapView>
+
+    <FlexboxLayout
+      row="0"
+      col="0"
+      flexDirection="column"
+      justifyContent="flex-end"
+      alignItems="flex-start"
+    >
+      <ScrollView orientation="horizontal">
+        <FlexboxLayout
+          flexDirection="row"
+          [height]="thumbnailHeight"
+          [width]="thumbnailWidth"
+          [paddingBottom]="thumbnailBottomPadding"
+        >
+        </FlexboxLayout>
+      </ScrollView>
+    </FlexboxLayout>
+  </GridLayout>
+-->
 </StackLayout>
