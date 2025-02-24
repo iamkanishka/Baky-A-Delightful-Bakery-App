@@ -1,0 +1,72 @@
+\.card {
+    border-radius: 12;
+    background-color: white;
+    padding: 12;
+    margin: 8;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    height: 150;
+    border-radius: 12;
+  }
+  
+  .bakery-image {
+    width: 100%;
+    height: 150;
+    border-radius: 12;
+  }
+  
+  .rating-container {
+    position: absolute;
+    top: 8;
+    left: 8;
+    background-color: white;
+    border-radius: 8;
+    padding: 4 8;
+  }
+  
+  .rating-label {
+    font-weight: bold;
+    font-size: 12;
+  }
+  
+  .favorite-icon {
+    position: absolute;
+    top: 8;
+    right: 8;
+    width: 24;
+    height: 24;
+  }
+  
+  .details {
+    margin-top: 8;
+  }
+  
+  .title {
+    font-size: 18;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 14;
+    color: gray;
+  }
+  
+  .info-container {
+    margin-top: 4;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 16;
+    height: 16;
+    margin-right: 4;
+  }
+  
+  .info-text {
+    font-size: 14;
+    color: gray;
+  }
+  
