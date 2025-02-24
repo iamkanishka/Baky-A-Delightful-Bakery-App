@@ -1,28 +1,32 @@
-<GridLayout rows="auto, auto, auto" class="card">
-    <!-- Image Section -->
-    <GridLayout row="0" class="image-container">
-      <Image src="~/images/bakery.jpg" class="bakery-image"></Image>
-      <FlexboxLayout class="rating-container">
-        <Label text="⭐ 4.8 (1k+ Review)" class="rating-label"></Label>
-      </FlexboxLayout>
-      <Image src="~/images/heart.png" class="favorite-icon"></Image>
-    </GridLayout>
-  
-    <!-- Details Section -->
-    <StackLayout row="1" class="details">
-      <Label text="Rise & Shine Bakery Co." class="title"></Label>
-      <Label text="Cup Cake, Cookies, Donuts, Breads, Cake.." class="subtitle"></Label>
-    </StackLayout>
-  
-    <!-- Location & Delivery Info -->
-    <FlexboxLayout row="2" class="info-container">
-      <Image src="~/images/location.png" class="icon"></Image>
-      <Label text="8502 Preston Rd. Inglewood, Maine 98380" class="info-text"></Label>
+<GridLayout rows="auto, auto, auto, auto" borderRadius="12" backgroundColor="white" padding="12" margin="8" elevation="4">
+  <!-- Image Section -->
+  <GridLayout row="0" height="150" borderRadius="12">
+    <Image src="~/images/bakery.jpg" width="100%" height="150" borderRadius="12"></Image>
+    
+    <!-- Rating Badge -->
+    <FlexboxLayout position="absolute" top="8" left="8" backgroundColor="white" borderRadius="8" padding="4 8">
+      <Label text="⭐ 4.8 (1k+ Review)" fontWeight="bold" fontSize="12"></Label>
     </FlexboxLayout>
-  
-    <FlexboxLayout row="3" class="info-container">
-      <Image src="~/images/time.png" class="icon"></Image>
-      <Label text="16 min • 2.5km • Free Delivery" class="info-text"></Label>
-    </FlexboxLayout>
+
+    <!-- Favorite Icon -->
+    <Image src="~/images/heart.png" position="absolute" top="8" right="8" width="24" height="24"></Image>
   </GridLayout>
-  
+
+  <!-- Bakery Details -->
+  <StackLayout row="1" marginTop="8">
+    <Label text="Rise & Shine Bakery Co." fontSize="18" fontWeight="bold"></Label>
+    <Label text="Cup Cake, Cookies, Donuts, Breads, Cake.." fontSize="14" color="gray"></Label>
+  </StackLayout>
+
+  <!-- Location Info -->
+  <FlexboxLayout row="2" flexDirection="row" alignItems="center" marginTop="4">
+    <Image src="~/images/location.png" width="16" height="16" marginRight="4"></Image>
+    <Label text="8502 Preston Rd. Inglewood, Maine 98380" fontSize="14" color="gray"></Label>
+  </FlexboxLayout>
+
+  <!-- Delivery Info -->
+  <FlexboxLayout row="3" flexDirection="row" alignItems="center" marginTop="4">
+    <Image src="~/images/time.png" width="16" height="16" marginRight="4"></Image>
+    <Label text="16 min • 2.5km • Free Delivery" fontSize="14" color="gray"></Label>
+  </FlexboxLayout>
+</GridLayout>
