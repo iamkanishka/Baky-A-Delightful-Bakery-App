@@ -1,1 +1,28 @@
-<p>bakery-card works!</p>
+<GridLayout rows="auto, auto, auto" class="card">
+    <!-- Image Section -->
+    <GridLayout row="0" class="image-container">
+      <Image src="~/images/bakery.jpg" class="bakery-image"></Image>
+      <FlexboxLayout class="rating-container">
+        <Label text="⭐ 4.8 (1k+ Review)" class="rating-label"></Label>
+      </FlexboxLayout>
+      <Image src="~/images/heart.png" class="favorite-icon"></Image>
+    </GridLayout>
+  
+    <!-- Details Section -->
+    <StackLayout row="1" class="details">
+      <Label text="Rise & Shine Bakery Co." class="title"></Label>
+      <Label text="Cup Cake, Cookies, Donuts, Breads, Cake.." class="subtitle"></Label>
+    </StackLayout>
+  
+    <!-- Location & Delivery Info -->
+    <FlexboxLayout row="2" class="info-container">
+      <Image src="~/images/location.png" class="icon"></Image>
+      <Label text="8502 Preston Rd. Inglewood, Maine 98380" class="info-text"></Label>
+    </FlexboxLayout>
+  
+    <FlexboxLayout row="3" class="info-container">
+      <Image src="~/images/time.png" class="icon"></Image>
+      <Label text="16 min • 2.5km • Free Delivery" class="info-text"></Label>
+    </FlexboxLayout>
+  </GridLayout>
+  
