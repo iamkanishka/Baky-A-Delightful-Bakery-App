@@ -1,1 +1,37 @@
-<p>recent-search works!</p>
+<GridLayout rows="auto, auto, auto, *" class="page">
+    <!-- Search Bar Section -->
+    <FlexboxLayout row="0" class="search-bar">
+      <Image src="~/images/back.png" class="icon"></Image>
+      <TextField hint="Search.." class="search-input"></TextField>
+      <Image src="~/images/close.png" class="icon"></Image>
+    </FlexboxLayout>
+  
+    <!-- Recent Search -->
+    <StackLayout row="1" class="section">
+      <Label text="Recent Search" class="section-title"></Label>
+      <FlexboxLayout *ngFor="let item of recentSearches" class="recent-item">
+        <Label [text]="item" class="recent-text"></Label>
+        <Image src="~/images/close.png" class="remove-icon"></Image>
+      </FlexboxLayout>
+    </StackLayout>
+  
+    <!-- Recent View -->
+    <StackLayout row="2" class="section">
+      <Label text="Recent View" class="section-title"></Label>
+    </StackLayout>
+  
+    <!-- List of Recent Views -->
+    <ListView [items]="recentViews" row="3">
+      <ng-template let-item="item">
+        <FlexboxLayout class="list-item">
+          <Image [src]="item.image" class="item-image"></Image>
+          <StackLayout class="item-details">
+            <Label [text]="item.name" class="item-title"></Label>
+            <Label [text]="item.category" class="item-category"></Label>
+            <Label [text]="'$' + item.price" class="item-price"></Label>
+          </StackLayout>
+        </FlexboxLayout>
+      </ng-template>
+    </ListView>
+  </GridLayout>
+  
