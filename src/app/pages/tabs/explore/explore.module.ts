@@ -5,14 +5,14 @@ import { ExploreRoutingModule } from './explore-routing.module';
 import { ExploreComponent } from './explore.component';
 import { NativeScriptCommonModule } from '@nativescript/angular';
 import { GoogleMapsModule } from '@nativescript/google-maps/angular';
-
+import {MapComponent} from '../../shared/map/map.component'
 @NgModule({
   declarations: [ExploreComponent],
   imports: [
-    CommonModule,
     NativeScriptCommonModule,
     ExploreRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MapComponent
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
