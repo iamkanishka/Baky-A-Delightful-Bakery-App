@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+ 
+import { NativeScriptModule } from '@nativescript/angular'
 import { CheckoutRoutingModule } from './checkout-routing.module';
+import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ShippingAddressComponent],
   imports: [
-    CommonModule,
+    NativeScriptModule,
     CheckoutRoutingModule
   ]
 })
