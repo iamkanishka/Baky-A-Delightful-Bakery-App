@@ -5,10 +5,11 @@ import { CheckoutRoutingModule } from './checkout-routing.module';
 import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
 import { EReceiptComponent } from './e-receipt/e-receipt.component';
 import { ReviewSummaryComponent } from './review-summary/review-summary.component';
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 
 
 @NgModule({
-  declarations: [ShippingAddressComponent, EReceiptComponent, ReviewSummaryComponent],
+  declarations: [ShippingAddressComponent, EReceiptComponent, ReviewSummaryComponent, PaymentMethodsComponent],
   imports: [
     NativeScriptModule,
     CheckoutRoutingModule
