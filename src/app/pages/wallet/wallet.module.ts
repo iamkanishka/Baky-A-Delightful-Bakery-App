@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NativeScriptModule } from '@nativescript/angular'
 import { WalletRoutingModule } from './wallet-routing.module';
+import {TopupWalletComponent} from './topup-wallet/topup-wallet.component';
+import {AddMoneyComponent} from './add-money/add-money.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TopupWalletComponent],
   imports: [
-    CommonModule,
+    NativeScriptModule,
     WalletRoutingModule
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class WalletModule { }
