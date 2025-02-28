@@ -1,0 +1,61 @@
+# Root-level ignores
+/node_modules
+/dist
+/build
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+.DS_Store
+.env
+.env.local
+.env.*.local
+.temp/
+.tmp/
+pids/
+*.pid
+*.seed
+*.pid.lock
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Frontend (NativeScript + Angular)
+frontend/node_modules/
+frontend/dist/
+frontend/hooks/
+frontend/platforms/
+frontend/typings/
+frontend/.vscode/
+frontend/.idea/
+
+# Backend (NestJS, Elixir, Go)
+backend/node_modules/
+backend/dist/
+backend/tmp/
+backend/.vscode/
+backend/.idea/
+backend/_build/         # Elixir build artifacts
+backend/deps/           # Elixir dependencies
+backend/bin/            # Elixir binaries
+backend/cover/          # Test coverage for Elixir
+backend/mix.lock        # Elixir dependency lockfile
+backend/go.sum          # Go dependency lockfile
+backend/go.mod          # Go module file
+backend/.elixir_ls/     # Elixir language server
+
+# IDE/editor-specific files
+.idea/
+.project
+.classpath
+.settings/
+/c9/
+*.launch
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
