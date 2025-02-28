@@ -38,4 +38,17 @@ export class AuthService {
     };
   }
 
+
+  // Validate JWT payload
+  async validateUser(payload: { sub: number; email: string }) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: payload.sub },
+    });
+    if (!user || user.email !== payload.email) {
+      throw new UnauthorizedException();
+    }
+    return user;
+  }
+
+
 }
