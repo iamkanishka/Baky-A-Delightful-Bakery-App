@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-    <string name="facebook_app_id">1039683990152259</string>
-    <string name="facebook_client_token">c1b8f72d59ed536608e2d1629d3d104b</string>
+    <string name="facebook_app_id">789456</string>
+    <string name="facebook_client_token">12233</string>
     <string name="app_name">Baky</string>
     <string name="title_activity_kimera">Baky</string>
 
