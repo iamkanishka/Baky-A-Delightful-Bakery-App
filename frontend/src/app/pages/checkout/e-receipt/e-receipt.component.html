@@ -1,1 +1,60 @@
-<p>e-receipt works!</p>
+<GridLayout rows="auto, *" backgroundColor="#f5f5f5" padding="15">
+    <!-- Header Section -->
+    <StackLayout row="0" horizontalAlignment="left" verticalAlignment="center" padding="10" backgroundColor="#fff">
+      <Button text="←" color="#333" fontSize="20" (tap)="goBack()" marginRight="10"></Button>
+      <Label text="E-Receipt" fontSize="20" fontWeight="bold" color="#333"></Label>
+    </StackLayout>
+  
+    <!-- Content Section -->
+    <ScrollView row="1">
+      <StackLayout>
+        <!-- Barcode -->
+        <Image src="res://barcode" stretch="fill" width="100%" height="60" marginBottom="15"></Image>
+  
+        <!-- Item List -->
+        <StackLayout marginBottom="10" backgroundColor="#fff" padding="10">
+          <GridLayout columns="80, *" marginBottom="10">
+            <Image col="0" src="res://chocolate_cake" stretch="aspectFill" width="80" height="80" marginRight="10"></Image>
+            <StackLayout col="1" verticalAlignment="center">
+              <Label text="Chocolate Cake" fontSize="16" fontWeight="bold" color="#333"></Label>
+              <Label text="Cake" fontSize="14" color="#666"></Label>
+              <Label text="$50.00" fontSize="16" fontWeight="bold" color="#e74c3c"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+  
+        <StackLayout marginBottom="10" backgroundColor="#fff" padding="10">
+          <GridLayout columns="80, *" marginBottom="10">
+            <Image col="0" src="res://cupcake" stretch="aspectFill" width="80" height="80" marginRight="10"></Image>
+            <StackLayout col="1" verticalAlignment="center">
+              <Label text="Divine Cupcake Delights" fontSize="16" fontWeight="bold" color="#333"></Label>
+              <Label text="Cup Cake" fontSize="14" color="#666"></Label>
+              <Label text="$12.00" fontSize="16" fontWeight="bold" color="#e74c3c"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+  
+        <StackLayout marginBottom="10" backgroundColor="#fff" padding="10">
+          <GridLayout columns="80, *" marginBottom="10">
+            <Image col="0" src="res://vanilla_cake" stretch="aspectFill" width="80" height="80" marginRight="10"></Image>
+            <StackLayout col="1" verticalAlignment="center">
+              <Label text="Vanilla Velvet Delights" fontSize="16" fontWeight="bold" color="#333"></Label>
+              <Label text="Cake" fontSize="14" color="#666"></Label>
+              <Label text="$20.00" fontSize="16" fontWeight="bold" color="#e74c3c"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+  
+        <StackLayout marginBottom="10" backgroundColor="#fff" padding="10">
+          <GridLayout columns="80, *" marginBottom="10">
+            <Image col="0" src="res://brown_bread" stretch="aspectFill" width="80" height="80" marginRight="10"></Image>
+            <StackLayout col="1" verticalAlignment="center">
+              <Label text="Brown Breads" fontSize="16" fontWeight="bold" color="#333"></Label>
+              <Label text="Bread" fontSize="14" color="#666"></Label>
+              <Label text="$10.00" fontSize="16" fontWeight="bold" color="#e74c3c"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
