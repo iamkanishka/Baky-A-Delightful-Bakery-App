@@ -1,1 +1,82 @@
-<p>filter works!</p>
+<GridLayout rows="auto, auto, auto, auto, auto, auto" backgroundColor="white" padding="16">
+    <!-- Top Section: Back Arrow and Title -->
+    <StackLayout row="0" marginBottom="16">
+      <FlexboxLayout justifyContent="space-between" alignItems="center">
+        <Image src="res://ic_back" width="24" height="24" stretch="aspectFit" />
+        <Label text="Filter" fontSize="18" fontWeight="bold" color="#333" />
+        <Label width="24" ></Label> <!-- Placeholder for alignment -->
+      </FlexboxLayout>
+    </StackLayout>
+  
+    <!-- Location Section -->
+    <StackLayout row="1" marginBottom="16">
+      <Label text="Location" fontSize="16" fontWeight="bold" color="#333" marginBottom="8" ></Label>
+      <StackLayout backgroundColor="#F5F5F5" borderRadius="8" padding="12" horizontalAlignment="stretch">
+        <FlexboxLayout justifyContent="space-between" alignItems="center">
+          <Label text="New York, USA" fontSize="14" color="#666" ></Label>
+          <Image src="res://ic_dropdown" width="16" height="16" stretch="aspectFit" />
+        </FlexboxLayout>
+      </StackLayout>
+    </StackLayout>
+  
+    <!-- Category Section -->
+    <StackLayout row="2" marginBottom="16">
+      <Label text="Category" fontSize="16" fontWeight="bold" color="#333" marginBottom="8" />
+      <FlexboxLayout justifyContent="space-between">
+        <Button *ngFor="let category of categories"
+                [text]="category"
+                [backgroundColor]="selectedCategory === category ? '#8B572A' : '#F5F5F5'"
+                [color]="selectedCategory === category ? 'white' : '#666'"
+                fontSize="14"
+                padding="8 16"
+                borderRadius="20"
+                (tap)="onCategorySelect(category)" />
+      </FlexboxLayout>
+    </StackLayout>
+  
+    <!-- Price Range Section -->
+    <StackLayout row="3" marginBottom="16">
+      <Label text="Price Range" fontSize="16" fontWeight="bold" color="#333" marginBottom="8" />
+      <Slider minValue="10" maxValue="40" value="10" marginBottom="8" thumbColor="#8B572A" trackBackgroundColor="#E0E0E0" trackFillColor="#8B572A" />
+      <FlexboxLayout justifyContent="space-between">
+        <Label text="$10" fontSize="14" color="#666" ></Label>
+        <Label text="$15" fontSize="14" color="#666" ></Label>
+        <Label text="$20" fontSize="14" color="#666" ></Label>
+        <Label text="$25" fontSize="14" color="#666" ></Label>
+        <Label text="$30" fontSize="14" color="#666" ></Label>
+        <Label text="$35" fontSize="14" color="#666" ></Label>
+        <Label text="$40" fontSize="14" color="#666" ></Label>
+      </FlexboxLayout>
+    </StackLayout>
+  
+    <!-- Reviews Section -->
+    <StackLayout row="4" marginBottom="16">
+      <Label text="Reviews" fontSize="16" fontWeight="bold" color="#333" marginBottom="8" />
+      <StackLayout *ngFor="let review of reviews" marginBottom="8">
+        <FlexboxLayout justifyContent="space-between" alignItems="center">
+          <FlexboxLayout alignItems="center">
+            <Label [text]="getStars(review.stars)" fontSize="16" color="#FFC107" marginRight="8" />
+            <Label [text]="review.label" fontSize="14" color="#666" />
+          </FlexboxLayout>
+          <Image [src]="review.selected ? 'res://ic_radio_selected' : 'res://ic_radio_unselected'"
+                 width="24" height="24" stretch="aspectFit"
+                 (tap)="onReviewSelect(review)" />
+        </FlexboxLayout>
+      </StackLayout>
+    </StackLayout>
+  
+    <!-- Sort By Section -->
+    <StackLayout row="5">
+      <Label text="Sort by" fontSize="16" fontWeight="bold" color="#333" marginBottom="8" />
+      <FlexboxLayout justifyContent="space-between">
+        <Button *ngFor="let sort of sortOptions"
+                [text]="sort"
+                [backgroundColor]="selectedSort === sort ? '#8B572A' : '#F5F5F5'"
+                [color]="selectedSort === sort ? 'white' : '#666'"
+                fontSize="14"
+                padding="8 16"
+                borderRadius="20"
+                (tap)="onSortSelect(sort)" />
+      </FlexboxLayout>
+    </StackLayout>
+  </GridLayout>
