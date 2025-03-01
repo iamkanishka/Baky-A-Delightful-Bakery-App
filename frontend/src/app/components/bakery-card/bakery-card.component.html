@@ -1,32 +1,60 @@
-<GridLayout rows="auto, auto, auto, auto" borderRadius="12" backgroundColor="white" padding="12" margin="8" elevation="4">
-  <!-- Image Section -->
-  <GridLayout row="0" height="150" borderRadius="12">
-    <Image src="~/images/bakery.jpg" width="100%" height="150" borderRadius="12"></Image>
-    
-    <!-- Rating Badge -->
-    <FlexboxLayout position="absolute" top="8" left="8" backgroundColor="white" borderRadius="8" padding="4 8">
-      <Label text="⭐ 4.8 (1k+ Review)" fontWeight="bold" fontSize="12"></Label>
+<GridLayout rows="auto, auto, auto" backgroundImage="url('~/assets/images/bakery-bg.jpg')" height="100%" padding="16">
+  <!-- Top Icons Section -->
+  <StackLayout row="0" marginTop="16" padding="8">
+    <FlexboxLayout justifyContent="space-between" alignItems="center">
+      <Image src="res://ic_back" width="24" height="24" margin="0 8" stretch="aspectFit" />
+      <FlexboxLayout>
+        <Image src="res://ic_share" width="24" height="24" margin="0 8" stretch="aspectFit" />
+        <Image src="res://ic_favorite" width="24" height="24" margin="0 8" stretch="aspectFit" />
+      </FlexboxLayout>
     </FlexboxLayout>
-
-    <!-- Favorite Icon -->
-    <Image src="~/images/heart.png" position="absolute" top="8" right="8" width="24" height="24"></Image>
-  </GridLayout>
-
-  <!-- Bakery Details -->
-  <StackLayout row="1" marginTop="8">
-    <Label text="Rise & Shine Bakery Co." fontSize="18" fontWeight="bold"></Label>
-    <Label text="Cup Cake, Cookies, Donuts, Breads, Cake.." fontSize="14" color="gray"></Label>
   </StackLayout>
 
-  <!-- Location Info -->
-  <FlexboxLayout row="2" flexDirection="row" alignItems="center" marginTop="4">
-    <Image src="~/images/location.png" width="16" height="16" marginRight="4"></Image>
-    <Label text="8502 Preston Rd. Inglewood, Maine 98380" fontSize="14" color="gray"></Label>
-  </FlexboxLayout>
+  <!-- Bakery Card Section -->
+  <StackLayout row="1" backgroundColor="white" borderRadius="16" padding="16" margin="16" elevation="4">
+    <!-- Rating -->
+    <FlexboxLayout justifyContent="flex-end" marginBottom="8">
+      <Label text="★ 4.8 (1k+ Review)" fontSize="14" color="#FFC107" backgroundColor="#FFF8E1" padding="4 8" borderRadius="12" />
+    </FlexboxLayout>
 
-  <!-- Delivery Info -->
-  <FlexboxLayout row="3" flexDirection="row" alignItems="center" marginTop="4">
-    <Image src="~/images/time.png" width="16" height="16" marginRight="4"></Image>
-    <Label text="16 min • 2.5km • Free Delivery" fontSize="14" color="gray"></Label>
+    <!-- Bakery Name and Categories -->
+    <Label [text]="bakery.name" fontSize="20" fontWeight="bold" color="#333" marginBottom="4" />
+    <Label [text]="bakery.categories" fontSize="14" color="#666" marginBottom="12" />
+
+    <!-- Address, Distance, and Hours -->
+    <StackLayout marginTop="8">
+      <FlexboxLayout alignItems="center">
+        <Image src="res://ic_location" width="16" height="16" marginRight="8" stretch="aspectFit" />
+        <Label [text]="bakery.address" fontSize="14" color="#666" marginBottom="8" />
+      </FlexboxLayout>
+      <FlexboxLayout alignItems="center">
+        <Image src="res://ic_distance" width="16" height="16" marginRight="8" stretch="aspectFit" />
+        <Label [text]="bakery.distance" fontSize="14" color="#666" marginBottom="8" />
+      </FlexboxLayout>
+      <FlexboxLayout alignItems="center">
+        <Image src="res://ic_time" width="16" height="16" marginRight="8" stretch="aspectFit" />
+        <Label [text]="bakery.hours" fontSize="14" color="#666" marginBottom="8" />
+      </FlexboxLayout>
+    </StackLayout>
+  </StackLayout>
+
+  <!-- Stats Section -->
+  <FlexboxLayout row="2" justifyContent="space-around" margin="16">
+    <StackLayout backgroundColor="#F5F5F5" borderRadius="50" width="80" height="80" verticalAlignment="center" horizontalAlignment="center">
+      <Label [text]="bakery.customers" fontSize="16" fontWeight="bold" color="#333" textAlignment="center" />
+      <Label text="Customer" fontSize="12" color="#666" textAlignment="center" />
+    </StackLayout>
+    <StackLayout backgroundColor="#F5F5F5" borderRadius="50" width="80" height="80" verticalAlignment="center" horizontalAlignment="center">
+      <Label [text]="bakery.products" fontSize="16" fontWeight="bold" color="#333" textAlignment="center" />
+      <Label text="Products" fontSize="12" color="#666" textAlignment="center" />
+    </StackLayout>
+    <StackLayout backgroundColor="#F5F5F5" borderRadius="50" width="80" height="80" verticalAlignment="center" horizontalAlignment="center">
+      <Label [text]="bakery.avgRating" fontSize="16" fontWeight="bold" color="#333" textAlignment="center" />
+      <Label text="Rating" fontSize="12" color="#666" textAlignment="center" />
+    </StackLayout>
+    <StackLayout backgroundColor="#F5F5F5" borderRadius="50" width="80" height="80" verticalAlignment="center" horizontalAlignment="center">
+      <Label [text]="bakery.totalReviews" fontSize="16" fontWeight="bold" color="#333" textAlignment="center" />
+      <Label text="Review" fontSize="12" color="#666" textAlignment="center" />
+    </StackLayout>
   </FlexboxLayout>
 </GridLayout>
