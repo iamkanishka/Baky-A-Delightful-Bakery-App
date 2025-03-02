@@ -3,7 +3,6 @@ import { RouterExtensions } from "@nativescript/angular";
 
 @Component({
   selector: 'app-review-summary',
-  imports: [],
   templateUrl: './review-summary.component.html',
   styleUrl: './review-summary.component.scss'
 })
