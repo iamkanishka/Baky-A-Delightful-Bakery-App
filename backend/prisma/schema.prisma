@@ -58,3 +58,18 @@ model Customer {
   cart          Cart?         // One-to-one relation with Cart
 }
 
+
+// Bakery Model
+model Bakery {
+  id            Int           @id @default(autoincrement())
+  name          String
+  email         String        @unique
+  phone         String
+  address       String
+  description   String?
+  rating        Float?        @default(0.0)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  orders        Order[]       // One-to-many relation with Orders
+  products      Product[]     // One-to-many relation with Products (items sold by the bakery)
+}
