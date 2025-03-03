@@ -1,1 +1,37 @@
-<p>bakeries works!</p>
+<ActionBar class="action-bar">
+    <GridLayout columns="*, *">
+        <Label text="Products" class="tab" col="0"></Label>
+        <Label text="Bakeries" class="tab active" col="1"></Label>
+    </GridLayout>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout class="container">
+        <GridLayout *ngFor="let bakery of bakeries" class="card" rows="auto, auto" columns="auto, *">
+            <Image [src]="bakery.image" class="bakery-image" rowSpan="2"></Image>
+
+            <!-- Rating and Favorite Button -->
+            <GridLayout class="header" columns="*, auto">
+                <StackLayout class="rating" orientation="horizontal">
+                    <Image src="star.png" class="star-icon"></Image>
+                    <Label [text]="'4.8 (1k+ Review)'" class="rating-text"></Label>
+                </StackLayout>
+                <Image src="heart.png" class="favorite-icon" col="1"></Image>
+            </GridLayout>
+
+            <!-- Bakery Info -->
+            <Label [text]="bakery.name" class="bakery-name"></Label>
+            <Label [text]="bakery.description" class="bakery-description"></Label>
+
+            <!-- Address and Delivery Info -->
+            <StackLayout class="details" orientation="horizontal">
+                <Image src="location.png" class="icon"></Image>
+                <Label [text]="bakery.address"></Label>
+            </StackLayout>
+
+            <StackLayout class="details" orientation="horizontal">
+                <Label [text]="'16 min • 2.5km • Free Delivery'"></Label>
+            </StackLayout>
+        </GridLayout>
+    </StackLayout>
+</ScrollView>
