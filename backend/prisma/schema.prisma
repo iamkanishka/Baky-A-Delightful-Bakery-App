@@ -41,3 +41,20 @@ enum PaymentStatus {
   FAILED
 }
 
+
+// Customer Model
+model Customer {
+  id            Int           @id @default(autoincrement())
+  name          String
+  email         String        @unique
+  password      String // Hashed password
+  phone         String?
+  address       String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  wallet        Wallet?       // One-to-one relation with Wallet
+  paymentMethods PaymentMethods[] // One-to-many relation with PaymentMethods
+  orders        Order[]       // One-to-many relation with Orders
+  cart          Cart?         // One-to-one relation with Cart
+}
+
