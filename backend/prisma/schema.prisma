@@ -112,3 +112,20 @@ model CartItem {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 }
+
+
+// Order Model
+model Order {
+  id            Int           @id @default(autoincrement())
+  customerId    Int
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  bakeryId      Int
+  bakery        Bakery        @relation(fields: [bakeryId], references: [id])
+  items         OrderItem[]   // One-to-many relation with OrderItems
+  totalAmount   Float
+  status        OrderStatus   @default(PENDING)
+  deliveryAddress String
+  paymentStatus PaymentStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
