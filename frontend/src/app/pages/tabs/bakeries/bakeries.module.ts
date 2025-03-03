@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { NativeScriptCommonModule } from "@nativescript/angular";
 import { BakeriesRoutingModule } from './bakeries-routing.module';
-
-
+ 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    BakeriesRoutingModule
+    NativeScriptCommonModule,
+    BakeriesRoutingModule,
+    
   ]
 })
 export class BakeriesModule { }
