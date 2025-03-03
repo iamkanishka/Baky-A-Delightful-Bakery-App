@@ -73,3 +73,19 @@ model Bakery {
   orders        Order[]       // One-to-many relation with Orders
   products      Product[]     // One-to-many relation with Products (items sold by the bakery)
 }
+
+
+// Product Model (to represent items sold by bakeries)
+model Product {
+  id            Int           @id @default(autoincrement())
+  name          String
+  description   String?
+  price         Float
+  imageUrl      String?
+  bakeryId      Int
+  bakery        Bakery        @relation(fields: [bakeryId], references: [id])
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  cartItems     CartItem[]    // One-to-many relation with CartItems
+  orderItems    OrderItem[]   // One-to-many relation with OrderItems
+}
