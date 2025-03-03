@@ -23,5 +23,14 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+// Enum for Order Status
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  OUT_FOR_DELIVERY
+  DELIVERED
+  CANCELLED
+}
 
 
