@@ -34,3 +34,10 @@ enum OrderStatus {
 }
 
 
+// Enum for Payment Status
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}
+
