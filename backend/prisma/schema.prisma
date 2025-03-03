@@ -152,3 +152,16 @@ model Wallet {
   balance       Float         @default(0.0)
   createdAt     DateTime      @default(now())
 }
+
+// PaymentMethods Model
+model PaymentMethods {
+  id            Int           @id @default(autoincrement())
+  customerId    Int
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  cardNumber    String        // Last 4 digits or tokenized for security
+  cardType      String        // e.g., Visa, MasterCard
+  expiryDate    String        // e.g., "MM/YY"
+  isDefault     Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
