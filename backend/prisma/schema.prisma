@@ -143,3 +143,12 @@ model OrderItem {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 }
+
+// Wallet Model
+model Wallet {
+  id            Int           @id @default(autoincrement())
+  customerId    Int           @unique
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  balance       Float         @default(0.0)
+  createdAt     DateTime      @default(now())
+}
