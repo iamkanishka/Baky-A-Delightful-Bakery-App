@@ -1,1 +1,94 @@
-<p>bakery-detail works!</p>
+<ActionBar class="action-bar">
+    <GridLayout columns="auto, *, auto, auto, auto">
+        <Image src="back.png" class="icon-btn" col="0"></Image>
+        <Label text="Rise & Shine Bakery Co." class="title" col="1"></Label>
+        <Image src="share.png" class="icon-btn" col="2"></Image>
+        <Image src="heart.png" class="icon-btn" col="3"></Image>
+    </GridLayout>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout class="container">
+        
+        <!-- Bakery Info -->
+        <GridLayout class="bakery-card" rows="auto, auto, auto" columns="*">
+            <Image src="bakery.jpg" class="bakery-image"></Image>
+            <StackLayout class="rating-container">
+                <Image src="star.png" class="star-icon"></Image>
+                <Label text="4.8 (1k+ Review)" class="rating-text"></Label>
+            </StackLayout>
+            <Label text="Cup Cake, Cookies, Donuts, Breads, Cake.." class="bakery-description"></Label>
+            <StackLayout orientation="horizontal" class="details">
+                <Image src="location.png" class="icon"></Image>
+                <Label text="8502 Preston Rd. Inglewood, Maine 98380"></Label>
+            </StackLayout>
+            <Label text="15 min • 1.5km • Mon-Sun | 11am - 11pm" class="schedule"></Label>
+        </GridLayout>
+
+        <!-- Stats Section -->
+        <GridLayout columns="*, *, *, *" class="stats-section">
+            <StackLayout col="0" class="stat">
+                <Label text="9,500+" class="stat-number"></Label>
+                <Label text="Customer" class="stat-label"></Label>
+            </StackLayout>
+            <StackLayout col="1" class="stat">
+                <Label text="250+" class="stat-number"></Label>
+                <Label text="Products" class="stat-label"></Label>
+            </StackLayout>
+            <StackLayout col="2" class="stat">
+                <Label text="4.9+" class="stat-number"></Label>
+                <Label text="Rating" class="stat-label"></Label>
+            </StackLayout>
+            <StackLayout col="3" class="stat">
+                <Label text="4,956" class="stat-number"></Label>
+                <Label text="Review" class="stat-label"></Label>
+            </StackLayout>
+        </GridLayout>
+
+        <!-- Tabs -->
+        <GridLayout columns="*, *, *, *" class="tabs">
+            <Label text="Products" class="tab active" col="0"></Label>
+            <Label text="About" class="tab" col="1"></Label>
+            <Label text="Gallery" class="tab" col="2"></Label>
+            <Label text="Review" class="tab" col="3"></Label>
+        </GridLayout>
+
+        <!-- Product Filters -->
+        <GridLayout columns="auto, auto, auto, auto, *" class="filters">
+            <Label text="All" class="filter"></Label>
+            <Label text="Cup Cake" class="filter active"></Label>
+            <Label text="Cookies" class="filter"></Label>
+            <Label text="Donuts" class="filter"></Label>
+            <Label text="View All" class="view-all" col="4"></Label>
+        </GridLayout>
+
+        <!-- Product List -->
+        <GridLayout columns="*, *" class="product-list">
+            <StackLayout class="product-card" col="0">
+                <Image src="chocolate_cake.jpg" class="product-image"></Image>
+                <StackLayout class="rating-container">
+                    <Image src="star.png" class="star-icon"></Image>
+                    <Label text="4.9" class="rating-text"></Label>
+                </StackLayout>
+                <Label text="Chocolate Cake" class="product-name"></Label>
+                <StackLayout orientation="horizontal">
+                    <Label text="$25.00" class="price"></Label>
+                    <Label text="$30.00" class="old-price"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="product-card" col="1">
+                <Image src="vanilla_cake.jpg" class="product-image"></Image>
+                <StackLayout class="rating-container">
+                    <Image src="star.png" class="star-icon"></Image>
+                    <Label text="4.8" class="rating-text"></Label>
+                </StackLayout>
+                <Label text="Vanilla Cake" class="product-name"></Label>
+                <StackLayout orientation="horizontal">
+                    <Label text="$20.00" class="price"></Label>
+                    <Label text="$22.00" class="old-price"></Label>
+                </StackLayout>
+            </StackLayout>
+        </GridLayout>
+
+    </StackLayout>
+</ScrollView>
