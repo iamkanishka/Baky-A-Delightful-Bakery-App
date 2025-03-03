@@ -89,3 +89,14 @@ model Product {
   cartItems     CartItem[]    // One-to-many relation with CartItems
   orderItems    OrderItem[]   // One-to-many relation with OrderItems
 }
+
+
+// Cart Model
+model Cart {
+  id            Int           @id @default(autoincrement())
+  customerId    Int           @unique
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  items         CartItem[]    // One-to-many relation with CartItems
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
