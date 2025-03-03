@@ -4,22 +4,21 @@ import {
   NativeScriptRouterModule,
   NSEmptyOutletComponent,
 } from "@nativescript/angular";
- 
-export const routes: Routes = [
-  // {
-  //   path: "",
-  //   redirectTo:
-  //     "/tabs/(homeTab:home/default//exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
-  //   pathMatch: "full",
-  // },
 
+export const routes: Routes = [
   {
     path: "",
     redirectTo:
-      "/tabs/(exploreTab:explore/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
+      "/tabs/(homeTab:home/default//bakeriesTab:bakeries/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
     pathMatch: "full",
   },
 
+  // {
+  //   path: "",
+  //   redirectTo:
+  //     "/tabs/(bakeriesTab:bakeries/default//wishlistTab:wishlist/default//chatTab:chat/default//profileTab:profile/default)",
+  //   pathMatch: "full",
+  // },
 
   {
     path: "home",
@@ -27,13 +26,22 @@ export const routes: Routes = [
     loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
     outlet: "homeTab",
   },
+  // {
+  //   path: "explore",
+  //   component: NSEmptyOutletComponent,
+  //   loadChildren: () =>
+  //     import("./explore/explore.module").then((m) => m.ExploreModule),
+  //   outlet: "exploreTab",
+  // },
+
   {
-    path: "explore",
+    path: "bakeries",
     component: NSEmptyOutletComponent,
     loadChildren: () =>
-      import("./explore/explore.module").then((m) => m.ExploreModule),
-    outlet: "exploreTab",
+      import("./bakeries/bakeries.module").then((m) => m.BakeriesModule),
+    outlet: "bakeriesTab",
   },
+
   {
     path: "wishlist",
     component: NSEmptyOutletComponent,
@@ -61,8 +69,5 @@ export const routes: Routes = [
   exports: [NativeScriptRouterModule],
 })
 export class TabsRoutingModule {
-  constructor(private route: ActivatedRoute) {
-    console.log(this.route);
-    console.log("TabsRoutingModule");
-  }
+
 }
