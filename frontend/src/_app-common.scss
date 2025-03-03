@@ -1,23 +1,28 @@
-@import '@nativescript/theme/core';
-@import '@nativescript/theme/default';
+@import "@nativescript/theme/core";
+@import "@nativescript/theme/default";
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
 // Font icon class
 .fab {
-  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
   font-weight: 400;
 }
 
 .fas {
-  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
   font-weight: 900;
 }
 
 .far {
-  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+  font-family: "Font Awesome 5 Free", "fa-regular-400";
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("~/App_Resources/Android/font/Inter-VariableFont_opsz,wght.ttf");
 }
 
 // Custom tabstrip item class
@@ -27,5 +32,3 @@
     @include colorize($contrasted-color: complementary background 20% 0%);
   }
 }
-
-
